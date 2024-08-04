@@ -26,7 +26,10 @@ class HomePage extends StatelessWidget {
                   SizedBox(
                     width: 12,
                   ),
-                  Icon(Icons.waving_hand_outlined),
+                  Icon(
+                    Icons.waving_hand_rounded,
+                    color: Colors.amberAccent,
+                  ),
                 ],
               ),
               SizedBox(
@@ -289,7 +292,7 @@ class HomePage extends StatelessWidget {
                 ],
               ),
               SizedBox(
-                height: 16,
+                height: 24,
               )
             ],
           ),
