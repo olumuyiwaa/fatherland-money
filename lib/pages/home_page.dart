@@ -1,7 +1,8 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
-import 'package:fatherland_money/utilities/Analytics_widget.dart';
+import 'package:fatherland_money/utilities/analytics_widget.dart';
 import 'package:fatherland_money/utilities/budget_widget.dart';
+import 'package:fatherland_money/utilities/transation_history_card.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatelessWidget {
@@ -286,14 +287,13 @@ class HomePage extends StatelessWidget {
                       onPressed: () {},
                       child: Text(
                         'See All',
-                        style:
-                            TextStyle(fontSize: 14, color: Colors.greenAccent),
+                        style: TextStyle(fontSize: 14, color: Colors.green),
                       ))
                 ],
               ),
-              SizedBox(
-                height: 24,
-              )
+              TransationHistoryCard(),
+              TransationHistoryCard(),
+              TransationHistoryCard(),
             ],
           ),
         ));
