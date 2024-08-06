@@ -54,6 +54,7 @@ dev_dependencies:
 flutter:
   assets:
     - assets/balance.png
+    - assets/balance-1.png
     - assets/icon.png
     - assets/icon-1.png
     - assets/icon-2.png
