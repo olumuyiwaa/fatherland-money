@@ -61,11 +61,6 @@ class TransactionLog extends StatelessWidget {
         TransationHistoryCard(),
         TransationHistoryCard(),
         TransationHistoryCard(),
-        TransationHistoryCard(),
-        TransationHistoryCard(),
-        TransationHistoryCard(),
-        TransationHistoryCard(),
-        TransationHistoryCard(),
       ],
     );
   }
