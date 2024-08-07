@@ -86,17 +86,24 @@ class MoneyTransferPage extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text('Saved Payee'),
+                  SizedBox(
+                    height: 8,
+                  ),
                   Container(
                     height: 54,
                     decoration: BoxDecoration(
                         color: Colors.white,
                         borderRadius: BorderRadius.circular(4)),
                     child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Icon(Icons.contact_phone),
+                        Icon(Icons.contact_phone, color: Colors.green),
+                        SizedBox(
+                          width: 12,
+                        ),
                         Text(
-                          'Select Saved Beneficiaries',
-                          style: TextStyle(fontSize: 16),
+                          'Select Saved Payee',
+                          style: TextStyle(fontSize: 16, color: Colors.green),
                         )
                       ],
                     ),
