@@ -52,6 +52,10 @@ class MoneyTransferPage extends StatelessWidget {
                         ),
                       ],
                     ),
+                    Text(
+                      'This Month',
+                      style: TextStyle(color: Colors.white, fontSize: 14),
+                    ),
                     Padding(
                       padding: EdgeInsets.fromLTRB(24, 0, 24, 0),
                       child: Row(
@@ -75,6 +79,30 @@ class MoneyTransferPage extends StatelessWidget {
                   ],
                 ),
               ),
+              SizedBox(
+                height: 32,
+              ),
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text('Saved Payee'),
+                  Container(
+                    height: 54,
+                    decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(4)),
+                    child: Row(
+                      children: [
+                        Icon(Icons.contact_phone),
+                        Text(
+                          'Select Saved Beneficiaries',
+                          style: TextStyle(fontSize: 16),
+                        )
+                      ],
+                    ),
+                  )
+                ],
+              )
             ],
           ),
         ));
