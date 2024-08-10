@@ -109,6 +109,22 @@ class MoneyTransferPage extends StatelessWidget {
                     ),
                   )
                 ],
+              ),
+              SizedBox(
+                height: 32,
+              ),
+              Padding(
+                padding: const EdgeInsets.fromLTRB(24, 12, 24, 12),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      'Payee Account Number',
+                      style:
+                          TextStyle(fontSize: 10, fontWeight: FontWeight.w400),
+                    ),
+                  ],
+                ),
               )
             ],
           ),
