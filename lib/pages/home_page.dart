@@ -1,5 +1,6 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
+import 'package:fatherland_money/pages/money_remitance.dart';
 import 'package:fatherland_money/pages/money_transfer_page.dart';
 import 'package:fatherland_money/utilities/analytics_widget.dart';
 import 'package:fatherland_money/utilities/budget_widget.dart';
@@ -198,47 +199,32 @@ class HomePage extends StatelessWidget {
                   color: Colors.white,
                   borderRadius: BorderRadius.circular(4),
                 ),
-                child: Column(
-                  children: [
-                    Image(
-                      height: 40,
-                      width: 40,
-                      image: AssetImage('assets/icon-1.png'),
-                    ),
-                    SizedBox(
-                      height: 8,
-                    ),
-                    Text(
-                      'Money Transfer',
-                      style: TextStyle(fontSize: 10),
-                      textAlign: TextAlign.center,
-                    )
-                  ],
-                ),
-              ),
-              Container(
-                padding: EdgeInsets.all(8),
-                width: 74,
-                decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.circular(4),
-                ),
-                child: Column(
-                  children: [
-                    Image(
-                      height: 40,
-                      width: 40,
-                      image: AssetImage('assets/icon-2.png'),
-                    ),
-                    SizedBox(
-                      height: 8,
-                    ),
-                    Text(
-                      'Money Remittance',
-                      style: TextStyle(fontSize: 10),
-                      textAlign: TextAlign.center,
-                    )
-                  ],
+                child: GestureDetector(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => MoneyRemitancePage(),
+                      ),
+                    );
+                  },
+                  child: Column(
+                    children: [
+                      Image(
+                        height: 40,
+                        width: 40,
+                        image: AssetImage('assets/icon-2.png'),
+                      ),
+                      SizedBox(
+                        height: 8,
+                      ),
+                      Text(
+                        'Money Remittance',
+                        style: TextStyle(fontSize: 10),
+                        textAlign: TextAlign.center,
+                      )
+                    ],
+                  ),
                 ),
               ),
               Container(
@@ -260,6 +246,31 @@ class HomePage extends StatelessWidget {
                     ),
                     Text(
                       'Bank Statement',
+                      style: TextStyle(fontSize: 10),
+                      textAlign: TextAlign.center,
+                    )
+                  ],
+                ),
+              ),
+              Container(
+                padding: EdgeInsets.all(8),
+                width: 74,
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.circular(4),
+                ),
+                child: Column(
+                  children: [
+                    Image(
+                      height: 40,
+                      width: 40,
+                      image: AssetImage('assets/icon-more.png'),
+                    ),
+                    SizedBox(
+                      height: 8,
+                    ),
+                    Text(
+                      'More Activities',
                       style: TextStyle(fontSize: 10),
                       textAlign: TextAlign.center,
                     )
