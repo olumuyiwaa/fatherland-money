@@ -58,9 +58,18 @@ class TransactionLog extends StatelessWidget {
         SizedBox(
           height: 8,
         ),
-        TransationHistoryCard(),
-        TransationHistoryCard(),
-        TransationHistoryCard(),
+        TransationHistoryCard(
+          transactionName: 'Tuloh International Travel Expense',
+          transactionAmount: 32,
+        ),
+        TransationHistoryCard(
+          transactionName: 'Tuloh International Travel Expense',
+          transactionAmount: 32,
+        ),
+        TransationHistoryCard(
+          transactionName: 'Tuloh International Travel Expense',
+          transactionAmount: 32,
+        ),
       ],
     );
   }

@@ -1,14 +1,22 @@
-// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
+// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, must_be_immutable
 
 import 'package:fatherland_money/pages/money_remitance.dart';
 import 'package:fatherland_money/pages/money_transfer_page.dart';
 import 'package:fatherland_money/utilities/analytics_widget.dart';
 import 'package:fatherland_money/utilities/budget_widget.dart';
+import 'package:fatherland_money/utilities/category_card.dart';
 import 'package:fatherland_money/utilities/transation_history_card.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatelessWidget {
-  const HomePage({super.key});
+  HomePage({super.key});
+  List transactionList = [
+    ["Fatherland Tech Expense", 8000],
+    ["Tuloh International Travel Expense", 3200],
+    ["Tuloh Office Expense", 6400],
+    ["Fatherland Salary", 7200],
+    ["EmergeX Office Expense", 2400],
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -157,125 +165,56 @@ class HomePage extends StatelessWidget {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Container(
-                padding: EdgeInsets.all(8),
-                width: 74,
-                decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.circular(4),
-                ),
-                child: GestureDetector(
-                  onTap: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => MoneyTransferPage(),
-                      ),
-                    );
-                  },
-                  child: Column(
-                    children: [
-                      Image(
-                        height: 40,
-                        width: 40,
-                        image: AssetImage('assets/icon.png'),
-                      ),
-                      SizedBox(
-                        height: 8,
-                      ),
-                      Text(
-                        'Money Transfer',
-                        style: TextStyle(fontSize: 10),
-                        textAlign: TextAlign.center,
-                      )
-                    ],
-                  ),
-                ),
+              GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => MoneyTransferPage(),
+                    ),
+                  );
+                },
+                child: CategoryCard(
+                    categoryTitle: 'Money Transfer', categoryIcon: 'icon.png'),
               ),
-              Container(
-                padding: EdgeInsets.all(8),
-                width: 74,
-                decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.circular(4),
-                ),
-                child: GestureDetector(
-                  onTap: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => MoneyRemitancePage(),
-                      ),
-                    );
-                  },
-                  child: Column(
-                    children: [
-                      Image(
-                        height: 40,
-                        width: 40,
-                        image: AssetImage('assets/icon-2.png'),
-                      ),
-                      SizedBox(
-                        height: 8,
-                      ),
-                      Text(
-                        'Money Remittance',
-                        style: TextStyle(fontSize: 10),
-                        textAlign: TextAlign.center,
-                      )
-                    ],
-                  ),
-                ),
+              GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => MoneyRemitancePage(),
+                    ),
+                  );
+                },
+                child: CategoryCard(
+                    categoryTitle: 'Money Transfer',
+                    categoryIcon: 'icon-2.png'),
               ),
-              Container(
-                padding: EdgeInsets.all(8),
-                width: 74,
-                decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.circular(4),
-                ),
-                child: Column(
-                  children: [
-                    Image(
-                      height: 40,
-                      width: 40,
-                      image: AssetImage('assets/icon-3.png'),
+              GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => MoneyRemitancePage(),
                     ),
-                    SizedBox(
-                      height: 8,
-                    ),
-                    Text(
-                      'Bank Statement',
-                      style: TextStyle(fontSize: 10),
-                      textAlign: TextAlign.center,
-                    )
-                  ],
-                ),
+                  );
+                },
+                child: CategoryCard(
+                    categoryTitle: 'Bank Statement',
+                    categoryIcon: 'icon-3.png'),
               ),
-              Container(
-                padding: EdgeInsets.all(8),
-                width: 74,
-                decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.circular(4),
-                ),
-                child: Column(
-                  children: [
-                    Image(
-                      height: 40,
-                      width: 40,
-                      image: AssetImage('assets/icon-more.png'),
+              GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => MoneyRemitancePage(),
                     ),
-                    SizedBox(
-                      height: 8,
-                    ),
-                    Text(
-                      'More Activities',
-                      style: TextStyle(fontSize: 10),
-                      textAlign: TextAlign.center,
-                    )
-                  ],
-                ),
+                  );
+                },
+                child: CategoryCard(
+                    categoryTitle: 'More Activities',
+                    categoryIcon: 'icon-more.png'),
               ),
             ],
           ),
@@ -300,9 +239,17 @@ class HomePage extends StatelessWidget {
                 ))
           ],
         ),
-        TransationHistoryCard(),
-        TransationHistoryCard(),
-        TransationHistoryCard(),
+        SizedBox(
+          height: 400,
+          child: ListView.builder(
+              itemCount: transactionList.length,
+              itemBuilder: (context, index) {
+                return TransationHistoryCard(
+                  transactionName: transactionList[index][0],
+                  transactionAmount: transactionList[index][1],
+                );
+              }),
+        )
       ],
     );
   }

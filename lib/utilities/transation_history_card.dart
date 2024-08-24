@@ -1,9 +1,15 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
-
 import 'package:flutter/material.dart';
 
 class TransationHistoryCard extends StatelessWidget {
-  const TransationHistoryCard({super.key});
+  final String transactionName;
+  final int transactionAmount;
+
+  const TransationHistoryCard({
+    super.key,
+    required this.transactionName,
+    required this.transactionAmount,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -28,19 +34,30 @@ class TransationHistoryCard extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    'Outbound Payment: Tuloh international travels expenses',
+                    transactionName,
                     overflow: TextOverflow.ellipsis,
                     maxLines: 1,
                     style: TextStyle(fontSize: 12, fontWeight: FontWeight.w400),
                   ),
-                  Text(
-                    'Jun 27th, 2024.   10:25:45',
-                    style: TextStyle(fontSize: 10),
+                  Row(
+                    children: [
+                      Text(
+                        'Jun 27th, 2024.',
+                        style: TextStyle(fontSize: 10),
+                      ),
+                      SizedBox(
+                        width: 12,
+                      ),
+                      Text(
+                        '10:25:45',
+                        style: TextStyle(fontSize: 10),
+                      ),
+                    ],
                   )
                 ],
               ),
             ),
-            Text('-#32.00')
+            Text("₦$transactionAmount")
           ],
         ),
       ),
