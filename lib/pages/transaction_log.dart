@@ -1,11 +1,68 @@
-// ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors
+// ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors, must_be_immutable
 
 import 'package:fatherland_money/utilities/analytics_widget.dart';
 import 'package:fatherland_money/utilities/transation_history_card.dart';
 import 'package:flutter/material.dart';
 
-class TransactionLog extends StatelessWidget {
+class TransactionLog extends StatefulWidget {
   const TransactionLog({super.key});
+
+  @override
+  State<TransactionLog> createState() => _TransactionLogState();
+}
+
+class _TransactionLogState extends State<TransactionLog> {
+  List transactionList = [
+    ["Fatherland Tech Expense", 8000],
+    ["Tuloh International Travel Expense", 3200],
+    ["Tuloh Office Expense", 6400],
+    ["Fatherland Salary", 7200],
+    ["EmergeX Office Expense", 2400],
+    ["Fatherland Tech Expense", 8000],
+    ["Tuloh International Travel Expense", 3200],
+    ["Tuloh Office Expense", 6400],
+    ["Fatherland Salary", 7200],
+    ["EmergeX Office Expense", 2400],
+    ["Fatherland Tech Expense", 8000],
+    ["Tuloh International Travel Expense", 3200],
+    ["Tuloh Office Expense", 6400],
+    ["Fatherland Salary", 7200],
+    ["EmergeX Office Expense", 2400],
+  ];
+
+  List displayedTransactions = [];
+  int itemsPerPage = 10;
+  bool isLoading = false;
+
+  @override
+  void initState() {
+    super.initState();
+    _loadMoreItems();
+  }
+
+  void _loadMoreItems() {
+    if (!isLoading && displayedTransactions.length < transactionList.length) {
+      setState(() {
+        isLoading = true;
+      });
+
+      Future.delayed(Duration(seconds: 1), () {
+        setState(() {
+          int remainingItems =
+              transactionList.length - displayedTransactions.length;
+          int itemsToLoad =
+              remainingItems < itemsPerPage ? remainingItems : itemsPerPage;
+
+          displayedTransactions.addAll(
+            transactionList.sublist(displayedTransactions.length,
+                displayedTransactions.length + itemsToLoad),
+          );
+
+          isLoading = false;
+        });
+      });
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -58,17 +115,29 @@ class TransactionLog extends StatelessWidget {
         SizedBox(
           height: 8,
         ),
-        TransationHistoryCard(
-          transactionName: 'Tuloh International Travel Expense',
-          transactionAmount: 32,
-        ),
-        TransationHistoryCard(
-          transactionName: 'Tuloh International Travel Expense',
-          transactionAmount: 32,
-        ),
-        TransationHistoryCard(
-          transactionName: 'Tuloh International Travel Expense',
-          transactionAmount: 32,
+        NotificationListener<ScrollNotification>(
+          onNotification: (ScrollNotification scrollInfo) {
+            if (!isLoading &&
+                scrollInfo.metrics.pixels ==
+                    scrollInfo.metrics.maxScrollExtent) {
+              _loadMoreItems();
+            }
+            return true;
+          },
+          child: ListView.builder(
+            shrinkWrap: true,
+            physics: NeverScrollableScrollPhysics(),
+            itemCount: displayedTransactions.length + (isLoading ? 1 : 0),
+            itemBuilder: (context, index) {
+              if (index == displayedTransactions.length) {
+                return Center(child: CircularProgressIndicator());
+              }
+              return TransationHistoryCard(
+                transactionName: displayedTransactions[index][0],
+                transactionAmount: displayedTransactions[index][1],
+              );
+            },
+          ),
         ),
       ],
     );

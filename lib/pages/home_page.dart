@@ -240,7 +240,7 @@ class HomePage extends StatelessWidget {
           ],
         ),
         SizedBox(
-          height: 400,
+          height: 360,
           child: ListView.builder(
               itemCount: transactionList.length,
               itemBuilder: (context, index) {
