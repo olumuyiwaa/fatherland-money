@@ -1,5 +1,4 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, must_be_immutable
-
 import 'package:fatherland_money/pages/money_remitance.dart';
 import 'package:fatherland_money/pages/money_transfer_page.dart';
 import 'package:fatherland_money/utilities/analytics_widget.dart';
@@ -10,6 +9,7 @@ import 'package:flutter/material.dart';
 
 class HomePage extends StatelessWidget {
   HomePage({super.key});
+
   List transactionList = [
     ["Fatherland Tech Expense", 8000],
     ["Tuloh International Travel Expense", 3200],
@@ -187,7 +187,7 @@ class HomePage extends StatelessWidget {
                   );
                 },
                 child: CategoryCard(
-                    categoryTitle: 'Money Transfer',
+                    categoryTitle: 'Money Remittance',
                     categoryIcon: 'icon-2.png'),
               ),
               GestureDetector(
@@ -204,16 +204,9 @@ class HomePage extends StatelessWidget {
                     categoryIcon: 'icon-3.png'),
               ),
               GestureDetector(
-                onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => MoneyRemitancePage(),
-                    ),
-                  );
-                },
+                onTap: () {},
                 child: CategoryCard(
-                    categoryTitle: 'More Activities',
+                    categoryTitle: 'Manage Budgets',
                     categoryIcon: 'icon-more.png'),
               ),
             ],
@@ -224,32 +217,23 @@ class HomePage extends StatelessWidget {
         ),
         BudgetWidget(),
         AnalyticsWidget(),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            Text(
-              'Transations',
-              style: TextStyle(fontSize: 16, fontWeight: FontWeight.w400),
-            ),
-            TextButton(
-                onPressed: () {},
-                child: Text(
-                  'See All',
-                  style: TextStyle(fontSize: 14, color: Colors.green),
-                ))
-          ],
+        Padding(
+          padding: EdgeInsets.only(top: 12, bottom: 12),
+          child: Text(
+            'Last Five (5) Transations',
+            style: TextStyle(fontSize: 16, fontWeight: FontWeight.w400),
+          ),
         ),
-        SizedBox(
-          height: 360,
-          child: ListView.builder(
-              itemCount: transactionList.length,
-              itemBuilder: (context, index) {
-                return TransationHistoryCard(
-                  transactionName: transactionList[index][0],
-                  transactionAmount: transactionList[index][1],
-                );
-              }),
-        )
+        ListView.builder(
+            shrinkWrap: true,
+            physics: NeverScrollableScrollPhysics(),
+            itemCount: transactionList.length,
+            itemBuilder: (context, index) {
+              return TransationHistoryCard(
+                transactionName: transactionList[index][0],
+                transactionAmount: transactionList[index][1],
+              );
+            }),
       ],
     );
   }

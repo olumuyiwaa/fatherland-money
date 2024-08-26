@@ -1,6 +1,8 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
+import 'package:fatherland_money/utilities/input_field.dart';
 import 'package:fatherland_money/utilities/transfer_and_remitance_balance.dart';
+import 'package:fatherland_money/utilities/unmutable_input_field.dart';
 import 'package:flutter/material.dart';
 
 class MoneyTransferPage extends StatelessWidget {
@@ -56,153 +58,21 @@ class MoneyTransferPage extends StatelessWidget {
               SizedBox(
                 height: 8,
               ),
-              Padding(
-                padding: const EdgeInsets.fromLTRB(0, 12, 0, 12),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      'Payee Account Number',
-                      style:
-                          TextStyle(fontSize: 12, fontWeight: FontWeight.w400),
-                    ),
-                    SizedBox(
-                      height: 8,
-                    ),
-                    TextField(
-                      decoration: InputDecoration(
-                        hintText: 'Enter Payee Account Number Here',
-                        // Normal state (when the TextField is not focused)
-                        enabledBorder: OutlineInputBorder(
-                          borderSide: BorderSide(
-                              color: Colors
-                                  .green), // Change this to your desired color
-                        ),
-                        // Focused state (when the TextField is focused)
-                        focusedBorder: OutlineInputBorder(
-                          borderSide: BorderSide(
-                              color: Colors
-                                  .green), // Change this to your desired color
-                        ),
-                        // Error state (when the TextField has an error)
-                        errorBorder: OutlineInputBorder(
-                          borderSide: BorderSide(
-                              color: Colors
-                                  .red), // Change this to your desired color
-                        ),
-                        // When the TextField is focused and has an error
-                        focusedErrorBorder: OutlineInputBorder(
-                          borderSide: BorderSide(
-                              color: Colors
-                                  .redAccent), // Change this to your desired color
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
+              Inputfield(
+                inputHintText: 'Enter Payee Account Number Here',
+                inputTitle: 'Payee Account Number',
               ),
-              Padding(
-                padding: const EdgeInsets.fromLTRB(0, 12, 0, 12),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      'Payee Name',
-                      style: TextStyle(
-                          fontSize: 12,
-                          fontWeight: FontWeight.w400,
-                          color: Colors.grey),
-                    ),
-                    SizedBox(
-                      height: 8,
-                    ),
-                    TextField(
-                      controller: TextEditingController(text: 'Payee Name'),
-                      readOnly: true, // Makes the text field immutable
-                      decoration: InputDecoration(
-                        border: OutlineInputBorder(
-                          borderSide: BorderSide(
-                            color: Colors.grey, // Set the focused border color
-                          ),
-                        ),
-                        focusedBorder: OutlineInputBorder(
-                          borderSide: BorderSide(
-                            color: Colors.grey, // Set the focused border color
-                          ),
-                        ),
-                      ),
-                      style: TextStyle(
-                        color: Colors.grey, // Grey out the text
-                      ),
-                    ),
-                  ],
-                ),
+              UnmutableInputField(
+                inputHintText: 'Payee Name',
+                inputTitle: 'Payee Name',
               ),
-              Padding(
-                padding: const EdgeInsets.fromLTRB(0, 12, 0, 12),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      'Amount #',
-                      style:
-                          TextStyle(fontSize: 12, fontWeight: FontWeight.w400),
-                    ),
-                    SizedBox(
-                      height: 8,
-                    ),
-                    TextField(
-                      decoration: InputDecoration(
-                        hintText: 'Enter Amount Here',
-                        // Normal state (when the TextField is not focused)
-                        enabledBorder: OutlineInputBorder(
-                          borderSide: BorderSide(
-                              color: Colors
-                                  .green), // Change this to your desired color
-                        ),
-                        // Focused state (when the TextField is focused)
-                        focusedBorder: OutlineInputBorder(
-                          borderSide: BorderSide(
-                              color: Colors
-                                  .green), // Change this to your desired color
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
+              Inputfield(
+                inputHintText: 'Enter Amount Here',
+                inputTitle: 'Amount',
               ),
-              Padding(
-                padding: const EdgeInsets.fromLTRB(0, 12, 0, 12),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      'Transation Reference',
-                      style:
-                          TextStyle(fontSize: 12, fontWeight: FontWeight.w400),
-                    ),
-                    SizedBox(
-                      height: 8,
-                    ),
-                    TextField(
-                      decoration: InputDecoration(
-                        hintText: 'Enter Transation Reference Here',
-                        // Normal state (when the TextField is not focused)
-                        enabledBorder: OutlineInputBorder(
-                          borderSide: BorderSide(
-                              color: Colors
-                                  .green), // Change this to your desired color
-                        ),
-                        // Focused state (when the TextField is focused)
-                        focusedBorder: OutlineInputBorder(
-                          borderSide: BorderSide(
-                              color: Colors
-                                  .green), // Change this to your desired color
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
+              Inputfield(
+                inputHintText: 'Enter Transation Reference Here',
+                inputTitle: 'Transation Reference',
               ),
               Padding(
                 padding: const EdgeInsets.fromLTRB(0, 32, 0, 12),

@@ -4,14 +4,9 @@ import 'package:fatherland_money/utilities/analytics_widget.dart';
 import 'package:fatherland_money/utilities/transation_history_card.dart';
 import 'package:flutter/material.dart';
 
-class TransactionLog extends StatefulWidget {
-  const TransactionLog({super.key});
+class TransactionLog extends StatelessWidget {
+  TransactionLog({super.key});
 
-  @override
-  State<TransactionLog> createState() => _TransactionLogState();
-}
-
-class _TransactionLogState extends State<TransactionLog> {
   List transactionList = [
     ["Fatherland Tech Expense", 8000],
     ["Tuloh International Travel Expense", 3200],
@@ -29,40 +24,6 @@ class _TransactionLogState extends State<TransactionLog> {
     ["Fatherland Salary", 7200],
     ["EmergeX Office Expense", 2400],
   ];
-
-  List displayedTransactions = [];
-  int itemsPerPage = 10;
-  bool isLoading = false;
-
-  @override
-  void initState() {
-    super.initState();
-    _loadMoreItems();
-  }
-
-  void _loadMoreItems() {
-    if (!isLoading && displayedTransactions.length < transactionList.length) {
-      setState(() {
-        isLoading = true;
-      });
-
-      Future.delayed(Duration(seconds: 1), () {
-        setState(() {
-          int remainingItems =
-              transactionList.length - displayedTransactions.length;
-          int itemsToLoad =
-              remainingItems < itemsPerPage ? remainingItems : itemsPerPage;
-
-          displayedTransactions.addAll(
-            transactionList.sublist(displayedTransactions.length,
-                displayedTransactions.length + itemsToLoad),
-          );
-
-          isLoading = false;
-        });
-      });
-    }
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -115,30 +76,16 @@ class _TransactionLogState extends State<TransactionLog> {
         SizedBox(
           height: 8,
         ),
-        NotificationListener<ScrollNotification>(
-          onNotification: (ScrollNotification scrollInfo) {
-            if (!isLoading &&
-                scrollInfo.metrics.pixels ==
-                    scrollInfo.metrics.maxScrollExtent) {
-              _loadMoreItems();
-            }
-            return true;
-          },
-          child: ListView.builder(
+        ListView.builder(
             shrinkWrap: true,
             physics: NeverScrollableScrollPhysics(),
-            itemCount: displayedTransactions.length + (isLoading ? 1 : 0),
+            itemCount: 10,
             itemBuilder: (context, index) {
-              if (index == displayedTransactions.length) {
-                return Center(child: CircularProgressIndicator());
-              }
               return TransationHistoryCard(
-                transactionName: displayedTransactions[index][0],
-                transactionAmount: displayedTransactions[index][1],
+                transactionName: transactionList[index][0],
+                transactionAmount: transactionList[index][1],
               );
-            },
-          ),
-        ),
+            }),
       ],
     );
   }
