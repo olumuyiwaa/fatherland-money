@@ -1,4 +1,5 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, must_be_immutable
+import 'package:fatherland_money/pages/bank_statement.dart';
 import 'package:fatherland_money/pages/money_remitance.dart';
 import 'package:fatherland_money/pages/money_transfer_page.dart';
 import 'package:fatherland_money/utilities/analytics_widget.dart';
@@ -88,6 +89,9 @@ class HomePage extends StatelessWidget {
                       ),
                       Text('2 Active', style: TextStyle(color: Colors.white))
                     ],
+                  ),
+                  SizedBox(
+                    height: 4,
                   ),
                   Container(
                     padding: EdgeInsets.fromLTRB(8, 0, 8, 0),
@@ -195,7 +199,7 @@ class HomePage extends StatelessWidget {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => MoneyRemitancePage(),
+                      builder: (context) => BankStatement(),
                     ),
                   );
                 },

@@ -1,5 +1,6 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
+import 'package:fatherland_money/utilities/button_big.dart';
 import 'package:fatherland_money/utilities/input_field.dart';
 import 'package:fatherland_money/utilities/transfer_and_remitance_balance.dart';
 import 'package:fatherland_money/utilities/unmutable_input_field.dart';
@@ -67,22 +68,7 @@ class MoneyRemitancePage extends StatelessWidget {
                 inputHintText: 'Enter Transation Reference Here',
                 inputTitle: 'Transation Reference',
               ),
-              Padding(
-                padding: const EdgeInsets.fromLTRB(0, 32, 0, 12),
-                child: Container(
-                  height: 64,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(8),
-                    color: Color.fromARGB(224, 38, 50, 56),
-                  ),
-                  child: Padding(
-                      padding: EdgeInsets.fromLTRB(114, 20, 114, 20),
-                      child: Text(
-                        'Make Payment',
-                        style: TextStyle(color: Colors.white, fontSize: 16),
-                      )),
-                ),
-              ),
+              ButtonBig(buttonText: 'Make Payment'),
             ],
           ),
         ));
