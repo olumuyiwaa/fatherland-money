@@ -22,7 +22,7 @@ class BudgetWidget extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text(
-                  'My Budget',
+                  'My Expenditures',
                   style: TextStyle(fontSize: 14, fontWeight: FontWeight.w400),
                 ),
                 Container(
@@ -37,7 +37,7 @@ class BudgetWidget extends StatelessWidget {
               ],
             ),
             Container(
-              width: 244,
+              width: 284,
               padding: EdgeInsets.all(4),
               color: Color.fromARGB(255, 243, 243, 243),
               child: Row(
@@ -47,7 +47,7 @@ class BudgetWidget extends StatelessWidget {
                     color: Colors.white,
                     padding: EdgeInsets.all(4),
                     child: Text(
-                      'All Budgets',
+                      'All Expenditures',
                       style: TextStyle(fontSize: 10),
                     ),
                   ),
@@ -79,7 +79,7 @@ class BudgetWidget extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text(
-                  'Allocated',
+                  'Total Spent:',
                   style: TextStyle(fontSize: 14, fontWeight: FontWeight.w400),
                 ),
                 Text(

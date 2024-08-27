@@ -1,9 +1,10 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, must_be_immutable
 import 'package:fatherland_money/pages/bank_statement.dart';
+import 'package:fatherland_money/pages/manage_expenditures.dart';
 import 'package:fatherland_money/pages/money_remitance.dart';
 import 'package:fatherland_money/pages/money_transfer_page.dart';
 import 'package:fatherland_money/utilities/analytics_widget.dart';
-import 'package:fatherland_money/utilities/budget_widget.dart';
+import 'package:fatherland_money/utilities/expenditure_widget.dart';
 import 'package:fatherland_money/utilities/category_card.dart';
 import 'package:fatherland_money/utilities/transation_history_card.dart';
 import 'package:flutter/material.dart';
@@ -208,9 +209,16 @@ class HomePage extends StatelessWidget {
                     categoryIcon: 'icon-3.png'),
               ),
               GestureDetector(
-                onTap: () {},
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => ManageBudgets(),
+                    ),
+                  );
+                },
                 child: CategoryCard(
-                    categoryTitle: 'Manage Budgets',
+                    categoryTitle: 'Manage Expenses',
                     categoryIcon: 'icon-more.png'),
               ),
             ],
