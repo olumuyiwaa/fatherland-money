@@ -1,6 +1,6 @@
 // ignore_for_file: prefer_const_constructors
 
-import 'package:fatherland_money/pages/addon_page.dart';
+//import 'package:fatherland_money/pages/addon_page.dart';
 import 'package:fatherland_money/pages/home_page.dart';
 import 'package:fatherland_money/pages/settings_page.dart';
 import 'package:fatherland_money/pages/transaction_log.dart';
@@ -28,7 +28,7 @@ class _FatherlandState extends State<Fatherland> {
   final page = [
     HomePage(),
     TransactionLog(),
-    AddonPage(),
+    //  AddonPage(),
     SettingsPage(),
   ];
   @override
@@ -61,10 +61,10 @@ class _FatherlandState extends State<Fatherland> {
               icon: Icon(Icons.list_alt_rounded),
               label: 'History',
             ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.widgets_rounded),
-              label: 'Add Ons',
-            ),
+            //BottomNavigationBarItem(
+            //  icon: Icon(Icons.widgets_rounded),
+            //  label: 'Add Ons',
+            //),
             BottomNavigationBarItem(
               icon: Icon(Icons.settings),
               label: 'Settings',
