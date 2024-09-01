@@ -13,7 +13,9 @@ class MoneyRemitancePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        backgroundColor: Color.fromARGB(255, 243, 243, 243),
         appBar: AppBar(
+          backgroundColor: Color.fromARGB(255, 243, 243, 243),
           title: Text('Money Remittance'),
         ),
         body: Padding(

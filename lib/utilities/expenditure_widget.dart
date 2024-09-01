@@ -2,8 +2,8 @@
 
 import 'package:flutter/material.dart';
 
-class BudgetWidget extends StatelessWidget {
-  const BudgetWidget({super.key});
+class ExpenditureWidget extends StatelessWidget {
+  const ExpenditureWidget({super.key});
 
   @override
   Widget build(BuildContext context) {

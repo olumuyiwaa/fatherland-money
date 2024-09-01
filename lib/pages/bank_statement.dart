@@ -56,7 +56,9 @@ class _BankStatementState extends State<BankStatement> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Color.fromARGB(255, 243, 243, 243),
       appBar: AppBar(
+        backgroundColor: Color.fromARGB(255, 243, 243, 243),
         title: Text('Bank Statement'),
       ),
       body: Padding(
@@ -65,7 +67,7 @@ class _BankStatementState extends State<BankStatement> {
           children: [
             Text('Time Frame'),
             Padding(
-              padding: EdgeInsets.only(top: 24, bottom: 12),
+              padding: EdgeInsets.only(top: 12, bottom: 12),
               child: Column(
                 children: [
                   Row(
@@ -86,7 +88,9 @@ class _BankStatementState extends State<BankStatement> {
                           ),
                         ),
                       ),
-                      SizedBox(width: 16),
+                      SizedBox(width: 12),
+                      Text('To'),
+                      SizedBox(width: 12),
                       Expanded(
                         child: GestureDetector(
                           onTap: () => _selectDate(context, false),

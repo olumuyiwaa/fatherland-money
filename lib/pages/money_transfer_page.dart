@@ -13,8 +13,10 @@ class MoneyTransferPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        backgroundColor: Color.fromARGB(255, 243, 243, 243),
         appBar: AppBar(
           title: Text('Money Transfer'),
+          backgroundColor: Color.fromARGB(255, 243, 243, 243),
         ),
         body: Padding(
           padding: EdgeInsets.fromLTRB(24, 24, 24, 0),

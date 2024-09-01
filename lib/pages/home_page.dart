@@ -25,17 +25,27 @@ class HomePage extends StatelessWidget {
     return ListView(
       children: [
         Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Text(
-              'Hello, Emmanuel',
-              style: TextStyle(fontSize: 24, fontWeight: FontWeight.w500),
+            Row(
+              children: [
+                Text(
+                  'Hello, Emmanuel',
+                  style: TextStyle(fontSize: 24, fontWeight: FontWeight.w500),
+                ),
+                SizedBox(
+                  width: 12,
+                ),
+                Icon(
+                  Icons.waving_hand_rounded,
+                  color: Colors.amberAccent,
+                ),
+              ],
             ),
-            SizedBox(
-              width: 12,
-            ),
-            Icon(
-              Icons.waving_hand_rounded,
-              color: Colors.amberAccent,
+            Image(
+              height: 42,
+              width: 42,
+              image: AssetImage('assets/icon-1.png'),
             ),
           ],
         ),
@@ -227,7 +237,7 @@ class HomePage extends StatelessWidget {
         SizedBox(
           height: 24,
         ),
-        BudgetWidget(),
+        ExpenditureWidget(),
         AnalyticsWidget(),
         Padding(
           padding: EdgeInsets.only(top: 12, bottom: 12),

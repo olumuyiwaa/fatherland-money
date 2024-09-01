@@ -29,9 +29,19 @@ class TransactionLog extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListView(
       children: [
-        Text(
-          'Transaction History',
-          style: TextStyle(fontSize: 20, fontWeight: FontWeight.w400),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Text(
+              'Transaction History',
+              style: TextStyle(fontSize: 20, fontWeight: FontWeight.w400),
+            ),
+            Image(
+              height: 42,
+              width: 42,
+              image: AssetImage('assets/icon-1.png'),
+            ),
+          ],
         ),
         SizedBox(
           height: 24,
