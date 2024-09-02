@@ -2,12 +2,12 @@
 
 import 'package:flutter/material.dart';
 
-class SettingTile extends StatelessWidget {
+class AppTile extends StatelessWidget {
   final String titleText;
   final String subtitleText;
   final Icon tileIcon;
 
-  const SettingTile({
+  const AppTile({
     super.key,
     required this.titleText,
     required this.subtitleText,

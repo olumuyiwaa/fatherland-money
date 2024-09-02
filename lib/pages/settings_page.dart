@@ -1,6 +1,6 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
-import 'package:fatherland_money/utilities/setting_tile.dart';
+import 'package:fatherland_money/utilities/app_tile.dart';
 import 'package:flutter/material.dart';
 
 class SettingsPage extends StatelessWidget {
@@ -37,30 +37,30 @@ class SettingsPage extends StatelessWidget {
             SizedBox(
               height: 12,
             ),
-            SettingTile(
+            AppTile(
               titleText: 'Profile Information',
               subtitleText: 'Update your name, email, and contact details.',
               tileIcon: Icon(Icons.person),
             ),
-            SettingTile(
+            AppTile(
               titleText: 'Security',
               subtitleText:
                   'Manage your password, enable two-factor authentication, and set up security questions.',
               tileIcon: Icon(Icons.shield),
             ),
-            SettingTile(
+            AppTile(
               titleText: 'Linked Accounts',
               subtitleText:
                   'Add or remove linked bank accounts and payment methods.',
               tileIcon: Icon(Icons.link),
             ),
-            SettingTile(
+            AppTile(
               titleText: 'Notifications',
               subtitleText:
                   'Customize your notification preferences for transactions, promotions, and updates.',
               tileIcon: Icon(Icons.notifications),
             ),
-            SettingTile(
+            AppTile(
               titleText: 'Currency',
               subtitleText: 'Select your default currency.',
               tileIcon: Icon(Icons.currency_exchange),
@@ -80,23 +80,23 @@ class SettingsPage extends StatelessWidget {
             SizedBox(
               height: 12,
             ),
-            SettingTile(
+            AppTile(
               titleText: 'Data Sharing',
               subtitleText:
                   'Control how your data is shared with third parties.',
               tileIcon: Icon(Icons.share),
             ),
-            SettingTile(
+            AppTile(
               titleText: 'App Permissions',
               subtitleText: 'Review and modify permissions granted to the app.',
               tileIcon: Icon(Icons.accessibility),
             ),
-            SettingTile(
+            AppTile(
               titleText: 'Help Center',
               subtitleText: 'Access FAQs, tutorials, and user guides.',
               tileIcon: Icon(Icons.help),
             ),
-            SettingTile(
+            AppTile(
               titleText: 'Contact Us',
               subtitleText:
                   'Reach out to customer support via chat, email, or phone.',
@@ -117,17 +117,17 @@ class SettingsPage extends StatelessWidget {
             SizedBox(
               height: 12,
             ),
-            SettingTile(
+            AppTile(
               titleText: 'Terms of Service',
               subtitleText: "Review the app's terms and conditions.",
               tileIcon: Icon(Icons.note),
             ),
-            SettingTile(
+            AppTile(
               titleText: 'Privacy Policy',
               subtitleText: 'Read about how your data is protected.',
               tileIcon: Icon(Icons.note),
             ),
-            SettingTile(
+            AppTile(
               titleText: 'Licenses',
               subtitleText:
                   'View open-source licenses and third-party acknowledgments.',
@@ -148,12 +148,12 @@ class SettingsPage extends StatelessWidget {
             SizedBox(
               height: 12,
             ),
-            SettingTile(
+            AppTile(
               titleText: 'App Version: V 1.0.2.3',
               subtitleText: "Click to see if a new update is available",
               tileIcon: Icon(Icons.update),
             ),
-            SettingTile(
+            AppTile(
               titleText: 'Developer Info',
               subtitleText: 'Learn more about the team behind the app.',
               tileIcon: Icon(Icons.developer_board),

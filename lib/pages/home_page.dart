@@ -53,7 +53,7 @@ class HomePage extends StatelessWidget {
           height: 32,
         ),
         Container(
-          padding: EdgeInsets.all(16),
+          padding: EdgeInsets.fromLTRB(16, 16, 16, 20),
           height: 198,
           decoration: BoxDecoration(
               image: DecorationImage(
@@ -135,7 +135,7 @@ class HomePage extends StatelessWidget {
                     ),
                   ),
                   SizedBox(
-                    height: 2,
+                    height: 4,
                   ),
                   Container(
                     padding: EdgeInsets.fromLTRB(8, 0, 8, 0),
