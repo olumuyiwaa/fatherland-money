@@ -60,6 +60,17 @@ class _BankStatementState extends State<BankStatement> {
       appBar: AppBar(
         backgroundColor: Color.fromARGB(255, 243, 243, 243),
         title: Text('Bank Statement'),
+        centerTitle: false,
+        actions: [
+          Image(
+            height: 42,
+            width: 42,
+            image: AssetImage('assets/icon-1.png'),
+          ),
+          SizedBox(
+            width: 24,
+          )
+        ],
       ),
       body: Padding(
         padding: EdgeInsets.fromLTRB(24, 24, 24, 0),

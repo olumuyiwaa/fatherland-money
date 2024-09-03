@@ -92,6 +92,7 @@ class TransactionLog extends StatelessWidget {
             itemCount: 10,
             itemBuilder: (context, index) {
               return TransationHistoryCard(
+                transactionIcon: Icon(Icons.send),
                 transactionName: transactionList[index][0],
                 transactionAmount: transactionList[index][1],
               );

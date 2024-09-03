@@ -49,9 +49,8 @@ class SettingsPage extends StatelessWidget {
               tileIcon: Icon(Icons.shield),
             ),
             AppTile(
-              titleText: 'Linked Accounts',
-              subtitleText:
-                  'Add or remove linked bank accounts and payment methods.',
+              titleText: 'Linked Cards',
+              subtitleText: 'Add or remove linked and payment methods.',
               tileIcon: Icon(Icons.link),
             ),
             AppTile(

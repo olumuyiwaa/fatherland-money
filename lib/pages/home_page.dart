@@ -54,7 +54,7 @@ class HomePage extends StatelessWidget {
         ),
         Container(
           padding: EdgeInsets.fromLTRB(16, 16, 16, 20),
-          height: 198,
+          height: 220,
           decoration: BoxDecoration(
               image: DecorationImage(
             image: AssetImage('assets/balance.png'),
@@ -173,12 +173,14 @@ class HomePage extends StatelessWidget {
           ),
         ),
         SizedBox(
-          height: 24,
+          height: 12,
         ),
+
+        //----------------------------------
         SizedBox(
           height: 100,
           child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
               GestureDetector(
                 onTap: () {
@@ -229,13 +231,14 @@ class HomePage extends StatelessWidget {
                 },
                 child: CategoryCard(
                     categoryTitle: 'Manage Expenses',
-                    categoryIcon: 'icon-more.png'),
+                    categoryIcon: 'icon-4.png'),
               ),
             ],
           ),
         ),
+        //----------------------
         SizedBox(
-          height: 24,
+          height: 20,
         ),
         ExpenditureWidget(),
         AnalyticsWidget(),
@@ -254,6 +257,7 @@ class HomePage extends StatelessWidget {
               return TransationHistoryCard(
                 transactionName: transactionList[index][0],
                 transactionAmount: transactionList[index][1],
+                transactionIcon: Icon(Icons.send),
               );
             }),
       ],

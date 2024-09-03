@@ -17,6 +17,17 @@ class MoneyRemitancePage extends StatelessWidget {
         appBar: AppBar(
           backgroundColor: Color.fromARGB(255, 243, 243, 243),
           title: Text('Money Remittance'),
+          centerTitle: false,
+          actions: [
+            Image(
+              height: 42,
+              width: 42,
+              image: AssetImage('assets/icon-1.png'),
+            ),
+            SizedBox(
+              width: 24,
+            )
+          ],
         ),
         body: Padding(
           padding: EdgeInsets.fromLTRB(24, 24, 24, 0),
