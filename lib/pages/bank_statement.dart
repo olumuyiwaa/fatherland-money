@@ -1,6 +1,6 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
-import 'package:fatherland_money/utilities/button_big.dart';
-import 'package:fatherland_money/utilities/input_field.dart';
+import '../utilities/button_big.dart';
+import '../utilities/input_field.dart';
 import 'package:flutter/material.dart';
 
 class BankStatement extends StatefulWidget {

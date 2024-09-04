@@ -1,10 +1,10 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
-import 'package:fatherland_money/utilities/button_big.dart';
-import 'package:fatherland_money/utilities/input_drop_down.dart';
-import 'package:fatherland_money/utilities/input_field.dart';
-import 'package:fatherland_money/utilities/transfer_and_remitance_balance.dart';
-import 'package:fatherland_money/utilities/unmutable_input_field.dart';
+import '../utilities/button_big.dart';
+import '../utilities/input_drop_down.dart';
+import '../utilities/input_field.dart';
+import '../utilities/transfer_and_remitance_balance.dart';
+import '../utilities/unmutable_input_field.dart';
 import 'package:flutter/material.dart';
 
 class MoneyTransferPage extends StatelessWidget {

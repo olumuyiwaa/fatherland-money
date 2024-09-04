@@ -1,23 +1,23 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, must_be_immutable
-import 'package:fatherland_money/pages/bank_statement.dart';
-import 'package:fatherland_money/pages/manage_expenditures.dart';
-import 'package:fatherland_money/pages/money_remitance.dart';
-import 'package:fatherland_money/pages/money_transfer_page.dart';
-import 'package:fatherland_money/utilities/analytics_widget.dart';
-import 'package:fatherland_money/utilities/expenditure_widget.dart';
-import 'package:fatherland_money/utilities/category_card.dart';
-import 'package:fatherland_money/utilities/transation_history_card.dart';
+import '../pages/bank_statement.dart';
+import '../pages/manage_expenditures.dart';
+import '../pages/money_remitance.dart';
+import '../pages/money_transfer_page.dart';
+import '../utilities/analytics_widget.dart';
+import '../utilities/expenditure_widget.dart';
+import '../utilities/category_card.dart';
+import '../utilities/transation_history_card.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatelessWidget {
   HomePage({super.key});
 
   List transactionList = [
-    ["Fatherland Tech Expense", 8000],
-    ["Tuloh International Travel Expense", 3200],
-    ["Tuloh Office Expense", 6400],
-    ["Fatherland Salary", 7200],
-    ["EmergeX Office Expense", 2400],
+    ["Fatherland Tech Expense", 8000, "expense"],
+    ["Tuloh International Travel Reimbursement", 3200, "income"],
+    ["Tuloh Office Expense", 6400, "expense"],
+    ["Fatherland Salary", 7200, "income"],
+    ["EmergeX Office Expense", 2400, "expense"],
   ];
 
   @override
@@ -241,7 +241,36 @@ class HomePage extends StatelessWidget {
           height: 20,
         ),
         ExpenditureWidget(),
-        AnalyticsWidget(),
+        AnalyticsWidget(
+          incomes: [
+            25000,
+            30000,
+            22000,
+            28000,
+            26000,
+            30000,
+            24000,
+            29000,
+            35000,
+            26000,
+            23000,
+            27000,
+          ],
+          expenditures: [
+            15000,
+            25000,
+            20000,
+            23000,
+            18000,
+            20000,
+            15000,
+            17000,
+            30000,
+            15000,
+            12000,
+            18000,
+          ],
+        ),
         Padding(
           padding: EdgeInsets.only(top: 12, bottom: 12),
           child: Text(
@@ -252,12 +281,12 @@ class HomePage extends StatelessWidget {
         ListView.builder(
             shrinkWrap: true,
             physics: NeverScrollableScrollPhysics(),
-            itemCount: transactionList.length,
+            itemCount: 5,
             itemBuilder: (context, index) {
-              return TransationHistoryCard(
+              return TransactionHistoryCard(
                 transactionName: transactionList[index][0],
                 transactionAmount: transactionList[index][1],
-                transactionIcon: Icon(Icons.send),
+                transactionIcon: transactionList[index][2],
               );
             }),
       ],

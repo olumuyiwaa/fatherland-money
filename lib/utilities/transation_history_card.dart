@@ -1,35 +1,46 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
+
 import 'package:flutter/material.dart';
 
-class TransationHistoryCard extends StatelessWidget {
+class TransactionHistoryCard extends StatelessWidget {
   final String transactionName;
   final int transactionAmount;
-  final Icon transactionIcon;
+  final String transactionIcon;
 
-  const TransationHistoryCard({
+  const TransactionHistoryCard({
     super.key,
     required this.transactionName,
     required this.transactionAmount,
     required this.transactionIcon,
   });
 
+  _getIconData(String iconName) {
+    switch (iconName) {
+      case 'income':
+        return 'assets/icon-5.png'; // Example for income
+      case 'expense':
+        return 'assets/icon.png'; // Example for expense
+      default:
+        return Icons.help_outline; // Default icon if none match
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: EdgeInsets.only(bottom: 8),
       child: ListTile(
-        leading: Container(
-          padding: EdgeInsets.all(8),
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(8),
-            color: Colors.green,
-          ),
-          child: transactionIcon,
+        leading: Image(
+          height: 42,
+          width: 42,
+          image: AssetImage(_getIconData(transactionIcon)),
         ),
         title: Text(
           transactionName,
+          overflow: TextOverflow.ellipsis,
+          maxLines: 1,
           style: TextStyle(
-            fontSize: 14,
+            fontSize: 13,
           ),
         ),
         subtitle: Row(
@@ -48,9 +59,13 @@ class TransationHistoryCard extends StatelessWidget {
           ],
         ),
         tileColor: Colors.white,
-        trailing: Text("₦$transactionAmount"),
+        trailing: Text(
+          "₦$transactionAmount",
+          style: TextStyle(
+            fontSize: 14,
+          ),
+        ),
         onTap: () {},
-        iconColor: Colors.white,
       ),
     );
   }

@@ -1,23 +1,23 @@
 // ignore_for_file: prefer_const_constructors
 
-//import 'package:fatherland_money/pages/addon_page.dart';
-import 'package:fatherland_money/pages/home_page.dart';
-import 'package:fatherland_money/pages/settings_page.dart';
-import 'package:fatherland_money/pages/transaction_log.dart';
+//import 'package:fintech/pages/addon_page.dart';
+import 'pages/home_page.dart';
+import 'pages/settings_page.dart';
+import 'pages/transaction_log.dart';
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(const Fatherland());
+  runApp(const Fintech());
 }
 
-class Fatherland extends StatefulWidget {
-  const Fatherland({super.key});
+class Fintech extends StatefulWidget {
+  const Fintech({super.key});
 
   @override
-  State<Fatherland> createState() => _FatherlandState();
+  State<Fintech> createState() => _FintechState();
 }
 
-class _FatherlandState extends State<Fatherland> {
+class _FintechState extends State<Fintech> {
   int _pageIndex = 0;
   void _bottomNavTapped(int index) {
     setState(() {
