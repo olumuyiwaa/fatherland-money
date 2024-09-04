@@ -33,7 +33,7 @@ class AnalyticsWidget extends StatelessWidget {
   ];
 
   // Constructor to accept incomes and expenditures
- AnalyticsWidget({super.key});
+  AnalyticsWidget({super.key});
 
   @override
   Widget build(BuildContext context) {
