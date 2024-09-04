@@ -3,7 +3,7 @@ import '../pages/bank_statement.dart';
 import '../pages/manage_expenditures.dart';
 import '../pages/money_remitance.dart';
 import '../pages/money_transfer_page.dart';
-import '../utilities/analytics_widget.dart';
+import '../utilities/Analytics_widget.dart';
 import '../utilities/expenditure_widget.dart';
 import '../utilities/category_card.dart';
 import '../utilities/transation_history_card.dart';
@@ -241,36 +241,8 @@ class HomePage extends StatelessWidget {
           height: 20,
         ),
         ExpenditureWidget(),
-        AnalyticsWidget(
-          incomes: [
-            25000,
-            30000,
-            22000,
-            28000,
-            26000,
-            30000,
-            24000,
-            29000,
-            35000,
-            26000,
-            23000,
-            27000,
-          ],
-          expenditures: [
-            15000,
-            25000,
-            20000,
-            23000,
-            18000,
-            20000,
-            15000,
-            17000,
-            30000,
-            15000,
-            12000,
-            18000,
-          ],
-        ),
+        AnalyticsWidget(),
+
         Padding(
           padding: EdgeInsets.only(top: 12, bottom: 12),
           child: Text(

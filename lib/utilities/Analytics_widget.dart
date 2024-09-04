@@ -3,15 +3,37 @@ import 'package:flutter/material.dart';
 import 'package:fl_chart/fl_chart.dart';
 
 class AnalyticsWidget extends StatelessWidget {
-  final List<double> incomes;
-  final List<double> expenditures;
+  final List<double> incomes = [
+    25000,
+    30000,
+    22000,
+    28000,
+    26000,
+    30000,
+    24000,
+    29000,
+    35000,
+    26000,
+    23000,
+    27000,
+  ];
+  final List<double> expenditures = [
+    15000,
+    25000,
+    20000,
+    23000,
+    18000,
+    20000,
+    15000,
+    17000,
+    30000,
+    15000,
+    12000,
+    18000,
+  ];
 
   // Constructor to accept incomes and expenditures
-  const AnalyticsWidget({
-    super.key,
-    required this.incomes,
-    required this.expenditures,
-  });
+ AnalyticsWidget({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -20,7 +42,7 @@ class AnalyticsWidget extends StatelessWidget {
       child: Column(
         children: [
           Container(
-            height: 228,
+            height: 248,
             padding: EdgeInsets.only(top: 12, left: 12, right: 12),
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(4),
@@ -51,9 +73,45 @@ class AnalyticsWidget extends StatelessWidget {
                     ),
                   ],
                 ),
+                Row(
+                  children: [
+                    Row(
+                      children: [
+                        Text(
+                          'Income',
+                          style: TextStyle(fontSize: 12),
+                        ),
+                        SizedBox(width: 8),
+                        Container(
+                          width: 8,
+                          height: 8,
+                          color: Colors.lightBlueAccent,
+                        )
+                      ],
+                    ),
+                    SizedBox(width: 20),
+                    Row(
+                      children: [
+                        Text(
+                          'Expenses',
+                          style: TextStyle(fontSize: 12),
+                        ),
+                        SizedBox(width: 8),
+                        Container(
+                          width: 8,
+                          height: 8,
+                          color: Colors.green,
+                        )
+                      ],
+                    ),
+                  ],
+                ),
+                SizedBox(
+                  height: 8,
+                ),
                 // Bar chart container
                 SizedBox(
-                  height: 162,
+                  height: 152,
                   child: BarChart(
                     BarChartData(
                       // Generating the bar groups for the chart
@@ -66,7 +124,6 @@ class AnalyticsWidget extends StatelessWidget {
                               // Convert the value to thousands and append 'k'
                               String formattedValue =
                                   '${(value / 1000).toStringAsFixed(0)}k';
-
                               return Text(
                                 formattedValue,
                                 style: TextStyle(
