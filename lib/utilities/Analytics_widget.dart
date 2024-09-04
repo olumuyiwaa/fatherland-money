@@ -1,5 +1,4 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, file_names
-
 import 'package:flutter/material.dart';
 import 'package:fl_chart/fl_chart.dart';
 
@@ -17,12 +16,12 @@ class AnalyticsWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.fromLTRB(0, 0, 0, 12),
+      padding: const EdgeInsets.fromLTRB(0, 4, 0, 4),
       child: Column(
         children: [
           Container(
             height: 228,
-            padding: EdgeInsets.all(12),
+            padding: EdgeInsets.only(top: 12, left: 12, right: 12),
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(4),
               color: Colors.white,
@@ -36,63 +35,25 @@ class AnalyticsWidget extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text(
-                      'Analytics',
+                      'Transaction Analytics',
                       style:
                           TextStyle(fontSize: 14, fontWeight: FontWeight.w400),
                     ),
-                    Row(
-                      children: [
-                        Container(
-                          width: 118,
-                          padding: EdgeInsets.all(4),
-                          color: Color.fromARGB(255, 243, 243, 243),
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              Container(
-                                color: Colors.white,
-                                padding: EdgeInsets.all(4),
-                                child: Text(
-                                  'All',
-                                  style: TextStyle(fontSize: 10),
-                                ),
-                              ),
-                              Container(
-                                padding: EdgeInsets.all(4),
-                                child: Text(
-                                  'Credit',
-                                  style: TextStyle(fontSize: 10),
-                                ),
-                              ),
-                              Container(
-                                padding: EdgeInsets.all(4),
-                                child: Text(
-                                  'Debit',
-                                  style: TextStyle(fontSize: 10),
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                        SizedBox(width: 12),
-                        Container(
-                          padding: EdgeInsets.all(8),
-                          decoration: BoxDecoration(
-                            color: Color.fromARGB(255, 243, 243, 243),
-                          ),
-                          child: Text(
-                            '2023',
-                            style: TextStyle(fontSize: 10),
-                          ),
-                        ),
-                      ],
-                    )
+                    Container(
+                      padding: EdgeInsets.all(8),
+                      decoration: BoxDecoration(
+                        color: Color.fromARGB(255, 243, 243, 243),
+                      ),
+                      child: Text(
+                        '2023',
+                        style: TextStyle(fontSize: 10),
+                      ),
+                    ),
                   ],
                 ),
                 // Bar chart container
-                Container(
+                SizedBox(
                   height: 162,
-                  color: Color.fromARGB(255, 243, 243, 243),
                   child: BarChart(
                     BarChartData(
                       // Generating the bar groups for the chart
@@ -102,14 +63,28 @@ class AnalyticsWidget extends StatelessWidget {
                           sideTitles: SideTitles(
                             showTitles: true,
                             getTitlesWidget: (double value, TitleMeta meta) {
+                              // Convert the value to thousands and append 'k'
+                              String formattedValue =
+                                  '${(value / 1000).toStringAsFixed(0)}k';
+
                               return Text(
-                                value.toStringAsFixed(0),
+                                formattedValue,
                                 style: TextStyle(
                                     color: Colors.black, fontSize: 10),
                               );
                             },
                             interval: 10000, // Interval for the Y-axis titles
                             reservedSize: 32, // Space for the titles
+                          ),
+                        ),
+                        rightTitles: AxisTitles(
+                          sideTitles: SideTitles(
+                            showTitles: false, // Hide right side titles
+                          ),
+                        ),
+                        topTitles: AxisTitles(
+                          sideTitles: SideTitles(
+                            showTitles: false, // Hide top side titles
                           ),
                         ),
                         bottomTitles: AxisTitles(
@@ -201,17 +176,17 @@ class AnalyticsWidget extends StatelessWidget {
           BarChartRodData(
             toY: incomes[index], // Income data
             color: Colors.lightBlueAccent, // Color for income bars
-            width: 16,
-            borderRadius: BorderRadius.circular(4),
+            width: 8,
+            borderRadius: BorderRadius.circular(0),
           ),
           BarChartRodData(
             toY: expenditures[index], // Expenditure data
             color: Colors.green, // Color for expenditure bars
-            width: 16,
-            borderRadius: BorderRadius.circular(4),
+            width: 8,
+            borderRadius: BorderRadius.circular(0),
           ),
         ],
-        barsSpace: 4,
+        barsSpace: 2,
       );
     });
   }
