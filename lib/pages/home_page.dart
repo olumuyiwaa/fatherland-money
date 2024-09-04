@@ -84,7 +84,7 @@ class HomePage extends StatelessWidget {
                     ],
                   ),
                   Text(
-                    '#25,000.40',
+                    '\$25,000.40',
                     style: TextStyle(color: Colors.white, fontSize: 20),
                   ),
                 ],
