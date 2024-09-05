@@ -47,7 +47,7 @@ class TransactionLog extends StatelessWidget {
               child: Image(
                 height: 42,
                 width: 42,
-                image: AssetImage('assets/icon-1.png'),
+                image: AssetImage('assets/image-1.png'),
               ),
             ),
           ],

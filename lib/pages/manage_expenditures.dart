@@ -1,5 +1,7 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
+import '../pages/page404.dart';
+
 import '../pages/profile.dart';
 
 import '../utilities/expenditure_widget.dart';
@@ -26,7 +28,7 @@ class ManageBudgets extends StatelessWidget {
             child: Image(
               height: 42,
               width: 42,
-              image: AssetImage('assets/icon-1.png'),
+              image: AssetImage('assets/image-1.png'),
             ),
           ),
           SizedBox(
@@ -71,17 +73,20 @@ class ManageBudgets extends StatelessWidget {
                   subtitleText:
                       'Control how your data is shared with third parties.',
                   tileIcon: Icon(Icons.phone_iphone),
+                  pageName: Page404(),
                 ),
                 AppTile(
                   titleText: 'Utilities',
                   subtitleText:
                       'Review and modify permissions granted to the app.',
                   tileIcon: Icon(Icons.pan_tool),
+                  pageName: Page404(),
                 ),
                 AppTile(
                   titleText: 'Transport',
                   subtitleText: 'Access FAQs, tutorials, and user guides.',
                   tileIcon: Icon(Icons.emoji_transportation),
+                  pageName: Page404(),
                 ),
               ],
             ),
