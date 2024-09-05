@@ -1,4 +1,5 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, must_be_immutable
+import '../pages/profile.dart';
 import '../pages/bank_statement.dart';
 import '../pages/manage_expenditures.dart';
 import '../pages/money_remitance.dart';
@@ -42,10 +43,16 @@ class HomePage extends StatelessWidget {
                 ),
               ],
             ),
-            Image(
-              height: 42,
-              width: 42,
-              image: AssetImage('assets/icon-1.png'),
+            GestureDetector(
+              onTap: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => Profile()));
+              },
+              child: Image(
+                height: 42,
+                width: 42,
+                image: AssetImage('assets/icon-1.png'),
+              ),
             ),
           ],
         ),

@@ -1,5 +1,7 @@
 // ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors, must_be_immutable
 
+import '../pages/profile.dart';
+
 import '../utilities/transation_history_card.dart';
 import 'package:flutter/material.dart';
 
@@ -37,10 +39,16 @@ class TransactionLog extends StatelessWidget {
               'Transaction History',
               style: TextStyle(fontSize: 20, fontWeight: FontWeight.w400),
             ),
-            Image(
-              height: 42,
-              width: 42,
-              image: AssetImage('assets/icon-1.png'),
+            GestureDetector(
+              onTap: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => Profile()));
+              },
+              child: Image(
+                height: 42,
+                width: 42,
+                image: AssetImage('assets/icon-1.png'),
+              ),
             ),
           ],
         ),

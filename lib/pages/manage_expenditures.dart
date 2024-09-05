@@ -1,5 +1,7 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
+import '../pages/profile.dart';
+
 import '../utilities/expenditure_widget.dart';
 import '../utilities/app_tile.dart';
 import 'package:flutter/material.dart';
@@ -16,10 +18,16 @@ class ManageBudgets extends StatelessWidget {
         title: Text('Manage Expenditures'),
         centerTitle: false,
         actions: [
-          Image(
-            height: 42,
-            width: 42,
-            image: AssetImage('assets/icon-1.png'),
+          GestureDetector(
+            onTap: () {
+              Navigator.push(
+                  context, MaterialPageRoute(builder: (context) => Profile()));
+            },
+            child: Image(
+              height: 42,
+              width: 42,
+              image: AssetImage('assets/icon-1.png'),
+            ),
           ),
           SizedBox(
             width: 24,
