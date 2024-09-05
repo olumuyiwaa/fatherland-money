@@ -15,7 +15,7 @@ class Page404 extends StatelessWidget {
         centerTitle: true,
       ),
       body: Center(
-        child: Text('404 Page, Coming soon'),
+        child: Text('404 Page, Coming Soon'),
       ),
     );
   }

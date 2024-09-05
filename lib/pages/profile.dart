@@ -1,6 +1,6 @@
 // ignore_for_file: prefer_const_constructors
 
-import 'package:fatherland_money/utilities/unmutable_input_field.dart';
+import '../utilities/unmutable_input_field.dart';
 import 'package:flutter/material.dart';
 
 class Profile extends StatelessWidget {
