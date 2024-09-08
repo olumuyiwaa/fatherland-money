@@ -60,7 +60,7 @@ class TransactionHistoryCard extends StatelessWidget {
         ),
         tileColor: Colors.white,
         trailing: Text(
-          "₦$transactionAmount",
+          "\$$transactionAmount",
           style: TextStyle(
             fontSize: 14,
           ),

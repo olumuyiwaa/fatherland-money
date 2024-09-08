@@ -1,12 +1,40 @@
 // ignore_for_file: prefer_const_constructors, sized_box_for_whitespace
 
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 
-class ExpenditureWidget extends StatelessWidget {
+class ExpenditureWidget extends StatefulWidget {
   const ExpenditureWidget({super.key});
 
   @override
+  State<ExpenditureWidget> createState() => _ExpenditureWidgetState();
+}
+
+class _ExpenditureWidgetState extends State<ExpenditureWidget> {
+  final formatter = NumberFormat('#,##0.00');
+
+  final double gadgets = 6800;
+
+  final double utilities = 7400;
+
+  final double transport = 11750;
+
+  final double others = 3800;
+
+  double total = 0;
+  double gadgetsPercent = 0;
+  double utilitiesPercent = 0;
+  double transportPercent = 0;
+  double othersPercent = 0;
+
+  @override
   Widget build(BuildContext context) {
+    total = gadgets + utilities + transport + others;
+    gadgetsPercent = ((gadgets / total) * 100);
+    utilitiesPercent = ((utilities / total) * 100);
+    transportPercent = ((transport / total) * 100);
+    othersPercent = ((others / total) * 100);
+
     return Padding(
       padding: const EdgeInsets.fromLTRB(0, 0, 0, 24),
       child: Container(
@@ -68,7 +96,7 @@ class ExpenditureWidget extends StatelessWidget {
                   style: TextStyle(fontSize: 14, fontWeight: FontWeight.w500),
                 ),
                 Text(
-                  '\$12,600',
+                  '\$${formatter.format(total)}',
                   style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
                 ),
               ],
@@ -76,22 +104,34 @@ class ExpenditureWidget extends StatelessWidget {
             // Allocation Bar
             Container(
               height: 32,
+              clipBehavior: Clip.hardEdge,
+              decoration: BoxDecoration(borderRadius: BorderRadius.circular(4)),
               child: Row(
                 children: [
-                  Expanded(flex: 5, child: Container(color: Colors.green)),
-                  Expanded(flex: 2, child: Container(color: Colors.blue)),
-                  Expanded(flex: 1, child: Container(color: Colors.amber)),
                   Expanded(
-                      flex: 2, child: Container(color: Colors.grey.shade300)),
+                      flex: (gadgetsPercent).toInt(),
+                      child: Container(color: Colors.green)),
+                  Expanded(
+                      flex: (utilitiesPercent).toInt(),
+                      child: Container(color: Colors.blue)),
+                  Expanded(
+                      flex: (transportPercent).toInt(),
+                      child: Container(color: Colors.amber)),
+                  Expanded(
+                      flex: (othersPercent).toInt(),
+                      child: Container(color: Colors.grey.shade300)),
                 ],
               ),
             ),
             // Category Breakdown
-            buildCategoryBreakdown('Gadgets', Colors.green, '50%', '\$6,800'),
-            buildCategoryBreakdown('Utilities', Colors.blue, '22%', '\$3,400'),
-            buildCategoryBreakdown('Transport', Colors.amber, '10%', '\$2,000'),
             buildCategoryBreakdown(
-                'Other Expenses', Colors.grey.shade300, '23%', '\$3,800'),
+                'Gadgets', Colors.green, gadgetsPercent, gadgets),
+            buildCategoryBreakdown(
+                'Utilities', Colors.blue, utilitiesPercent, utilities),
+            buildCategoryBreakdown(
+                'Transport', Colors.amber, transportPercent, transport),
+            buildCategoryBreakdown(
+                'Other Expenses', Colors.grey.shade300, othersPercent, others),
           ],
         ),
       ),
@@ -116,22 +156,28 @@ class ExpenditureWidget extends StatelessWidget {
   }
 
   Widget buildCategoryBreakdown(
-      String title, Color color, String percentage, String amount) {
+      String title, Color color, double percentage, double amount) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         Row(
           children: [
-            Container(color: color, height: 8, width: 8),
+            Container(
+                decoration: BoxDecoration(
+                    color: color, borderRadius: BorderRadius.circular(4)),
+                height: 8,
+                width: 8),
             SizedBox(width: 8),
             Text(title, style: TextStyle(fontSize: 12)),
           ],
         ),
         Row(
           children: [
-            Text(percentage, style: TextStyle(fontSize: 12)),
+            Text('${formatter.format(percentage)}%',
+                style: TextStyle(fontSize: 12)),
             SizedBox(width: 12),
-            Text(amount, style: TextStyle(fontSize: 12)),
+            Text('\$${formatter.format(amount)}',
+                style: TextStyle(fontSize: 12)),
           ],
         ),
       ],

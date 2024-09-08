@@ -14,11 +14,11 @@ class HomePage extends StatelessWidget {
   HomePage({super.key});
 
   List transactionList = [
-    ["Fatherland Tech Expense", 8000, "expense"],
-    ["Tuloh International Travel Reimbursement", 3200, "income"],
-    ["Tuloh Office Expense", 6400, "expense"],
-    ["Fatherland Salary", 7200, "income"],
-    ["EmergeX Office Expense", 2400, "expense"],
+    ["Fatherland Tech Expense", 800, "expense"],
+    ["Tuloh International Travel Reimbursement", 42, "income"],
+    ["Tuloh Office Expense", 64, "expense"],
+    ["Fatherland Salary", 72, "income"],
+    ["EmergeX Office Expense", 24, "expense"],
   ];
 
   List categories = [
