@@ -21,6 +21,21 @@ class HomePage extends StatelessWidget {
     ["EmergeX Office Expense", 2400, "expense"],
   ];
 
+  List categories = [
+    {
+      'title': 'Money Transfer',
+      'icon': 'icon.png',
+      'page': MoneyTransferPage()
+    },
+    {
+      'title': 'Money Remittance',
+      'icon': 'icon-2.png',
+      'page': MoneyRemitancePage()
+    },
+    {'title': 'Bank Statement', 'icon': 'icon-3.png', 'page': BankStatement()},
+    {'title': 'Manage Expenses', 'icon': 'icon-4.png', 'page': ManageBudgets()},
+  ];
+
   @override
   Widget build(BuildContext context) {
     return ListView(
@@ -185,64 +200,32 @@ class HomePage extends StatelessWidget {
 
         //----------------------------------
         SizedBox(
-          height: 100,
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
-            children: [
-              GestureDetector(
-                onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => MoneyTransferPage(),
-                    ),
-                  );
-                },
-                child: CategoryCard(
-                    categoryTitle: 'Money Transfer', categoryIcon: 'icon.png'),
-              ),
-              GestureDetector(
-                onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => MoneyRemitancePage(),
-                    ),
-                  );
-                },
-                child: CategoryCard(
-                    categoryTitle: 'Money Remittance',
-                    categoryIcon: 'icon-2.png'),
-              ),
-              GestureDetector(
-                onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => BankStatement(),
-                    ),
-                  );
-                },
-                child: CategoryCard(
-                    categoryTitle: 'Bank Statement',
-                    categoryIcon: 'icon-3.png'),
-              ),
-              GestureDetector(
-                onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => ManageBudgets(),
-                    ),
-                  );
-                },
-                child: CategoryCard(
-                    categoryTitle: 'Manage Expenses',
-                    categoryIcon: 'icon-4.png'),
-              ),
-            ],
-          ),
-        ),
+            child: GridView.builder(
+          shrinkWrap: true,
+          physics: NeverScrollableScrollPhysics(),
+          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+              crossAxisCount: 4,
+              crossAxisSpacing: 8,
+              mainAxisSpacing: 12,
+              mainAxisExtent: 100,
+              childAspectRatio: 1),
+          itemCount: categories.length,
+          itemBuilder: (context, index) {
+            return GestureDetector(
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => categories[index]['page'],
+                  ),
+                );
+              },
+              child: CategoryCard(
+                  categoryTitle: categories[index]['title'],
+                  categoryIcon: categories[index]['icon']),
+            );
+          },
+        )),
         //----------------------
         SizedBox(
           height: 20,
