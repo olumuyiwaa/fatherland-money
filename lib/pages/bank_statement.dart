@@ -131,7 +131,10 @@ class _BankStatementState extends State<BankStatement> {
               ),
             ),
             Inputfield(
-                inputHintText: 'username@server.com', inputTitle: 'Email'),
+              inputHintText: 'username@server.com',
+              inputTitle: 'Email',
+              textObscure: false,
+            ),
             SizedBox(height: 12),
             Text(
               'Your account statement will be sent to the provided email. Please verify that the email you have provided is correct.',

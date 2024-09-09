@@ -46,10 +46,12 @@ class MoneyRemitancePage extends StatelessWidget {
               Inputfield(
                 inputHintText: 'Enter Payee Sort Code Here',
                 inputTitle: 'Sort Code',
+                textObscure: false,
               ),
               Inputfield(
                 inputHintText: 'Enter Payee Account Number Here',
                 inputTitle: 'Payee Account Number',
+                textObscure: false,
               ),
               UnmutableInputField(
                   inputTitle: 'Payee Name', inputHintText: 'Payee Name'),
@@ -66,6 +68,7 @@ class MoneyRemitancePage extends StatelessWidget {
               Inputfield(
                 inputHintText: 'Enter Amount Here £',
                 inputTitle: 'Amount To Send £',
+                textObscure: false,
               ),
               UnmutableInputField(
                   inputTitle: 'Our Fee(0.8%)',
@@ -89,6 +92,7 @@ class MoneyRemitancePage extends StatelessWidget {
               Inputfield(
                 inputHintText: 'Enter Transation Reference Here',
                 inputTitle: 'Transation Reference',
+                textObscure: false,
               ),
               InputDropDown(),
               ButtonBig(buttonText: 'Make Payment'),

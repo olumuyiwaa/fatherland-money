@@ -84,6 +84,7 @@ class MoneyTransferPage extends StatelessWidget {
               Inputfield(
                 inputHintText: 'Enter Payee Account Number Here',
                 inputTitle: 'Payee Account Number',
+                textObscure: false,
               ),
               UnmutableInputField(
                 inputHintText: 'Payee Name',
@@ -92,10 +93,12 @@ class MoneyTransferPage extends StatelessWidget {
               Inputfield(
                 inputHintText: 'Enter Amount Here',
                 inputTitle: 'Amount',
+                textObscure: false,
               ),
               Inputfield(
                 inputHintText: 'Enter Transation Reference Here',
                 inputTitle: 'Transation Reference',
+                textObscure: false,
               ),
               InputDropDown(),
               ButtonBig(buttonText: 'Make Payment'),

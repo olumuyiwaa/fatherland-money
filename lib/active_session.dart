@@ -29,44 +29,41 @@ class _ActiveSessionState extends State<ActiveSession> {
   ];
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: Scaffold(
-        backgroundColor: Color.fromARGB(255, 243, 243, 243),
-        body: Padding(
-          padding: const EdgeInsets.fromLTRB(24, 24, 24, 0),
-          child: page[_pageIndex],
-        ),
-        bottomNavigationBar: BottomNavigationBar(
-          type: BottomNavigationBarType.fixed,
+    return Scaffold(
+      backgroundColor: Color.fromARGB(255, 243, 243, 243),
+      body: Padding(
+        padding: const EdgeInsets.fromLTRB(24, 24, 24, 0),
+        child: page[_pageIndex],
+      ),
+      bottomNavigationBar: BottomNavigationBar(
+        type: BottomNavigationBarType.fixed,
 
-          //get button page index
-          onTap: _bottomNavTapped,
-          // current page index to display on buttom nav bar
-          currentIndex: _pageIndex,
-          selectedItemColor: Colors.green,
-          //get button page index
-          items: const [
-            BottomNavigationBarItem(
-              icon: Icon(
-                Icons.home_filled,
-              ),
-              label: 'Home',
+        //get button page index
+        onTap: _bottomNavTapped,
+        // current page index to display on buttom nav bar
+        currentIndex: _pageIndex,
+        selectedItemColor: Colors.green,
+        //get button page index
+        items: const [
+          BottomNavigationBarItem(
+            icon: Icon(
+              Icons.home_filled,
             ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.list_alt_rounded),
-              label: 'History',
-            ),
-            //BottomNavigationBarItem(
-            //  icon: Icon(Icons.widgets_rounded),
-            //  label: 'Add Ons',
-            //),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.settings),
-              label: 'Settings',
-            ),
-          ],
-        ),
+            label: 'Home',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.list_alt_rounded),
+            label: 'History',
+          ),
+          //BottomNavigationBarItem(
+          //  icon: Icon(Icons.widgets_rounded),
+          //  label: 'Add Ons',
+          //),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.settings),
+            label: 'Settings',
+          ),
+        ],
       ),
     );
   }

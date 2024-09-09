@@ -4,11 +4,13 @@ import 'package:flutter/material.dart';
 class Inputfield extends StatelessWidget {
   final String inputHintText;
   final String inputTitle;
+  final bool textObscure;
 
   const Inputfield({
     super.key,
     required this.inputHintText,
     required this.inputTitle,
+    required this.textObscure,
   });
 
   @override
@@ -26,8 +28,10 @@ class Inputfield extends StatelessWidget {
             height: 8,
           ),
           TextField(
+            obscureText: textObscure,
             decoration: InputDecoration(
               hintText: inputHintText,
+              hintStyle: TextStyle(color: Colors.grey),
               // Normal state (when the TextField is not focused)
               enabledBorder: OutlineInputBorder(
                 borderSide: BorderSide(

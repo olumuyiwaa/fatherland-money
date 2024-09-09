@@ -60,6 +60,7 @@ flutter:
     - assets/icon.png
     - assets/icon-more.png
     - assets/icon-1.png
+    - assets/welcome.png
     - assets/icon-2.png
     - assets/icon-3.png
     - assets/icon-4.png
@@ -67,7 +68,6 @@ flutter:
     - assets/image-1.png
     - assets/vector.png
     - assets/vector-1.png
-
 
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in
