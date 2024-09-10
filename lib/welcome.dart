@@ -32,7 +32,7 @@ class Welcome extends StatelessWidget {
                     MaterialPageRoute(builder: (context) => Login()),
                   );
                 },
-                child: ButtonBig(buttonText: 'log in'),
+                child: ButtonBig(buttonText: 'Login'),
               ),
               Padding(
                 padding: const EdgeInsets.only(bottom: 12),
@@ -43,7 +43,7 @@ class Welcome extends StatelessWidget {
                     color: Colors.white,
                     border: Border.all(
                       color: Color.fromARGB(224, 38, 50, 56),
-                      width: 2,
+                      width: 1,
                     ),
                   ),
                   child: Align(

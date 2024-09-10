@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 
 class TransactionHistoryCard extends StatelessWidget {
   final String transactionName;
-  final int transactionAmount;
+  final String transactionAmount;
   final String transactionIcon;
 
   const TransactionHistoryCard({

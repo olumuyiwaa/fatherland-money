@@ -14,11 +14,15 @@ class HomePage extends StatelessWidget {
   HomePage({super.key});
 
   List transactionList = [
-    ["Fatherland Tech Expense", 800, "expense"],
-    ["Tuloh International Travel Reimbursement", 42, "income"],
-    ["Tuloh Office Expense", 64, "expense"],
-    ["Fatherland Salary", 72, "income"],
-    ["EmergeX Office Expense", 24, "expense"],
+    {'title': "Fatherland Tech Expense", 'amount': 800, 'category': "expense"},
+    {
+      'title': "Tuloh International Travel Reimbursement",
+      'amount': 42,
+      'category': "income"
+    },
+    {'title': "Tuloh Office Expense", 'amount': 64, 'category': "expense"},
+    {'title': "Fatherland Salary", 'amount': 72, 'category': "income"},
+    {'title': "EmergeX Office Expense", 'amount': 24, 'category': "expense"},
   ];
 
   List categories = [
@@ -33,6 +37,7 @@ class HomePage extends StatelessWidget {
       'page': MoneyRemitancePage()
     },
     {'title': 'Bank Statement', 'icon': 'icon-3.png', 'page': BankStatement()},
+    {'title': 'Manage Expenses', 'icon': 'icon-4.png', 'page': ManageBudgets()},
     {'title': 'Manage Expenses', 'icon': 'icon-4.png', 'page': ManageBudgets()},
   ];
 
@@ -246,9 +251,9 @@ class HomePage extends StatelessWidget {
             itemCount: 5,
             itemBuilder: (context, index) {
               return TransactionHistoryCard(
-                transactionName: transactionList[index][0],
-                transactionAmount: transactionList[index][1],
-                transactionIcon: transactionList[index][2],
+                transactionName: transactionList[index]['title'],
+                transactionAmount: transactionList[index]['amount'].toString(),
+                transactionIcon: transactionList[index]['category'],
               );
             }),
       ],

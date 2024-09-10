@@ -14,7 +14,7 @@ class Login extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(),
       body: Padding(
-        padding: EdgeInsets.fromLTRB(24, 68, 24, 24),
+        padding: EdgeInsets.fromLTRB(24, 64, 24, 24),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -24,13 +24,17 @@ class Login extends StatelessWidget {
                 Text(
                   'Welcome back',
                   style: TextStyle(
-                      fontSize: 24,
+                      color: Colors.green,
+                      fontSize: 32,
                       fontWeight: FontWeight.w600,
                       wordSpacing: -2),
                 ),
                 Text(
                   'Glad to see you again!',
-                  style: TextStyle(fontSize: 24, wordSpacing: -2),
+                  style: TextStyle(
+                      fontSize: 20,
+                      wordSpacing: -2,
+                      color: Color.fromARGB(224, 38, 50, 56)),
                 ),
               ],
             ),
@@ -47,7 +51,10 @@ class Login extends StatelessWidget {
                       inputHintText: 'Input Your Password',
                       inputTitle: 'Password',
                       textObscure: true),
-                  Text('Forgot Password?')
+                  Text(
+                    'Forgot Password?',
+                    style: TextStyle(color: Colors.green),
+                  )
                 ],
               ),
             ),
@@ -68,15 +75,18 @@ class Login extends StatelessWidget {
               children: [
                 Text(
                   "Don't have an account?",
-                  style: TextStyle(fontSize: 12, wordSpacing: -2),
+                  style: TextStyle(
+                      fontSize: 14,
+                      wordSpacing: -2,
+                      color: Color.fromARGB(224, 38, 50, 56)),
                 ),
                 Text(
                   'Register Now',
                   style: TextStyle(
-                    fontSize: 18,
-                    wordSpacing: -2,
-                    fontWeight: FontWeight.w600,
-                  ),
+                      fontSize: 18,
+                      wordSpacing: -2,
+                      fontWeight: FontWeight.w500,
+                      color: Colors.green),
                 ),
               ],
             ),

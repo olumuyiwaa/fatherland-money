@@ -11,21 +11,21 @@ class TransactionLog extends StatelessWidget {
   TransactionLog({super.key});
 
   List transactionList = [
-    ["Fatherland Tech Expense", 8000, "expense"],
-    ["Tuloh International Travel Expense", 3200, "expense"],
-    ["Tuloh Office Expense", 6400, "expense"],
-    ["Fatherland Salary", 7200, "income"],
-    ["EmergeX Office Expense", 2400, "expense"],
-    ["Fatherland Tech Expense", 8000, "expense"],
-    ["Fatherland Tech Reimbursement", 3200, "income"],
-    ["Tuloh International Travel Expense", 3200, "expense"],
-    ["Tuloh Office Expense", 6400, "expense"],
-    ["Fatherland Salary", 7200, "income"],
-    ["EmergeX Office Expense", 2400, "expense"],
-    ["Fatherland Tech Expense", 8000, "expense"],
-    ["Tuloh International Travel Expense", 3200, "expense"],
-    ["Fatherland Tech Travel Reimbursement", 3200, "income"],
-    ["Tuloh Office Expense", 6400, "expense"],
+    {'title': "Fatherland Tech Expense", 'amount': 800, 'category': "expense"},
+    {'title': "Tuloh Office Expense", 'amount': 64, 'category': "expense"},
+    {'title': "Fatherland Salary", 'amount': 72, 'category': "income"},
+    {'title': "EmergeX Office Expense", 'amount': 24, 'category': "expense"},
+    {'title': "Tuloh Office Expense", 'amount': 64, 'category': "expense"},
+    {'title': "Fatherland Salary", 'amount': 72, 'category': "income"},
+    {'title': "EmergeX Office Expense", 'amount': 24, 'category': "expense"},
+    {
+      'title': "Tuloh International Travel Reimbursement",
+      'amount': 42,
+      'category': "income"
+    },
+    {'title': "Tuloh Office Expense", 'amount': 64, 'category': "expense"},
+    {'title': "Fatherland Salary", 'amount': 72, 'category': "income"},
+    {'title': "EmergeX Office Expense", 'amount': 24, 'category': "expense"},
   ];
 
   @override
@@ -101,9 +101,9 @@ class TransactionLog extends StatelessWidget {
             itemCount: 10,
             itemBuilder: (context, index) {
               return TransactionHistoryCard(
-                transactionName: transactionList[index][0],
-                transactionAmount: transactionList[index][1],
-                transactionIcon: transactionList[index][2],
+                transactionName: transactionList[index]['title'],
+                transactionAmount: transactionList[index]['amount'].toString(),
+                transactionIcon: transactionList[index]['category'],
               );
             }),
       ],
