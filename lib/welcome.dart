@@ -1,7 +1,7 @@
 // ignore_for_file: prefer_const_constructors
 
 import '../auth/login.dart';
-import '/utilities/button_big.dart';
+import '../utilities/button_big.dart';
 import 'package:flutter/material.dart';
 
 class Welcome extends StatelessWidget {

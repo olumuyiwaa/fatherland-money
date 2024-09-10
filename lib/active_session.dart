@@ -1,9 +1,9 @@
 // ignore_for_file: prefer_const_constructors
 
 //import 'package:fintech/pages/addon_page.dart';
-import 'pages/home_page.dart';
-import 'pages/settings_page.dart';
-import 'pages/transaction_log.dart';
+import '../pages/home_page.dart';
+import '../pages/settings_page.dart';
+import '../pages/transaction_log.dart';
 import 'package:flutter/material.dart';
 
 class ActiveSession extends StatefulWidget {
