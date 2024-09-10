@@ -9,7 +9,10 @@ import '../utilities/unmutable_input_field.dart';
 import 'package:flutter/material.dart';
 
 class MoneyTransferPage extends StatelessWidget {
-  const MoneyTransferPage({super.key});
+  MoneyTransferPage({super.key});
+  final reference = TextEditingController();
+  final amount = TextEditingController();
+  final accountNumber = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -84,6 +87,7 @@ class MoneyTransferPage extends StatelessWidget {
                 inputHintText: 'Enter Payee Account Number Here',
                 inputTitle: 'Payee Account Number',
                 textObscure: false,
+                textControler: accountNumber,
               ),
               UnmutableInputField(
                 inputHintText: 'Payee Name',
@@ -93,11 +97,13 @@ class MoneyTransferPage extends StatelessWidget {
                 inputHintText: 'Enter Amount Here',
                 inputTitle: 'Amount',
                 textObscure: false,
+                textControler: amount,
               ),
               Inputfield(
                 inputHintText: 'Enter Transation Reference Here',
                 inputTitle: 'Transation Reference',
                 textObscure: false,
+                textControler: reference,
               ),
               InputDropDown(),
               ButtonBig(buttonText: 'Make Payment'),

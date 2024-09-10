@@ -14,6 +14,7 @@ class BankStatement extends StatefulWidget {
 class _BankStatementState extends State<BankStatement> {
   DateTime? _startDate;
   DateTime? _endDate;
+  final email = TextEditingController();
 
   Future<void> _selectDate(BuildContext context, bool isStart) async {
     final DateTime? picked = await showDatePicker(
@@ -133,6 +134,7 @@ class _BankStatementState extends State<BankStatement> {
               inputHintText: 'username@server.com',
               inputTitle: 'Email',
               textObscure: false,
+              textControler: email,
             ),
             SizedBox(height: 12),
             Text(

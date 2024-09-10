@@ -1,16 +1,18 @@
-// ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors, must_be_immutable
+// ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors, must_be_immutable, prefer_typing_uninitialized_variables
 import 'package:flutter/material.dart';
 
 class Inputfield extends StatelessWidget {
   final String inputHintText;
   final String inputTitle;
   final bool textObscure;
+  final textControler;
 
   const Inputfield({
     super.key,
     required this.inputHintText,
     required this.inputTitle,
     required this.textObscure,
+    required this.textControler,
   });
 
   @override
@@ -29,6 +31,7 @@ class Inputfield extends StatelessWidget {
           ),
           TextField(
             obscureText: textObscure,
+            controller: textControler,
             decoration: InputDecoration(
               hintText: inputHintText,
               hintStyle: TextStyle(color: Colors.grey),

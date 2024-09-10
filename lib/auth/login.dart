@@ -3,12 +3,12 @@
 import '../active_session.dart';
 import '../utilities/input_field.dart';
 import 'package:flutter/material.dart';
-
 import '../utilities/button_big.dart';
 
 class Login extends StatelessWidget {
-  const Login({super.key});
-
+  Login({super.key});
+  final email = TextEditingController();
+  final password = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -44,13 +44,17 @@ class Login extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.end,
                 children: [
                   Inputfield(
-                      inputHintText: 'email@server.com',
-                      inputTitle: 'Email Address',
-                      textObscure: false),
+                    inputHintText: 'email@server.com',
+                    inputTitle: 'Email Address',
+                    textObscure: false,
+                    textControler: email,
+                  ),
                   Inputfield(
-                      inputHintText: 'Input Your Password',
-                      inputTitle: 'Password',
-                      textObscure: true),
+                    inputHintText: 'Input Your Password',
+                    inputTitle: 'Password',
+                    textObscure: true,
+                    textControler: password,
+                  ),
                   Text(
                     'Forgot Password?',
                     style: TextStyle(color: Colors.green),
