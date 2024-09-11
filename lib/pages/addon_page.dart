@@ -1,5 +1,7 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
+import '../pages/page404.dart';
+import 'package:fintech/utilities/app_tile.dart';
 import 'package:flutter/material.dart';
 
 class AddonPage extends StatelessWidget {
@@ -16,178 +18,51 @@ class AddonPage extends StatelessWidget {
         SizedBox(
           height: 24,
         ),
-        Container(
-          padding: EdgeInsets.all(16),
-          color: Colors.white,
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Icon(
-                Icons.widgets_rounded,
-                size: 32,
-                color: Colors.green,
-              ),
-              SizedBox(
-                width: 208,
-                child: Text(
-                  'Buy Now, Pay Later',
-                  style: TextStyle(fontSize: 14),
-                ),
-              ),
-              Icon(Icons.chevron_right_outlined)
-            ],
-          ),
+        AppTile(
+          titleText: 'Buy Now, Pay Later',
+          subtitleText:
+              'Split your purchase into manageable payments, without the hassle.',
+          tileIcon: Icon(Icons.widgets_rounded),
+          pageName: Page404(),
         ),
-        SizedBox(
-          height: 18,
+        AppTile(
+          titleText: 'Credit Savings Pot',
+          subtitleText: 'Grow your savings, while you pay off your debt.',
+          tileIcon: Icon(Icons.widgets_rounded),
+          pageName: Page404(),
         ),
-        Container(
-          padding: EdgeInsets.all(16),
-          color: Colors.white,
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Icon(
-                Icons.widgets_rounded,
-                size: 32,
-                color: Colors.green,
-              ),
-              SizedBox(
-                width: 208,
-                child: Text(
-                  'Credit Savings Pot',
-                  style: TextStyle(fontSize: 14),
-                ),
-              ),
-              Icon(Icons.chevron_right_outlined)
-            ],
-          ),
+        AppTile(
+          titleText: 'Foreign Currency Card',
+          subtitleText: 'Spend abroad, without the hassle of exchange rates.',
+          tileIcon: Icon(Icons.widgets_rounded),
+          pageName: Page404(),
         ),
-        SizedBox(
-          height: 18,
+        AppTile(
+          titleText: 'Community',
+          subtitleText: 'Connect with others, who share your financial goals.',
+          tileIcon: Icon(Icons.widgets_rounded),
+          pageName: Page404(),
         ),
-        Container(
-          padding: EdgeInsets.all(16),
-          color: Colors.white,
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Icon(
-                Icons.widgets_rounded,
-                size: 32,
-                color: Colors.green,
-              ),
-              SizedBox(
-                width: 208,
-                child: Text(
-                  'Foreign Currency Card',
-                  style: TextStyle(fontSize: 14),
-                ),
-              ),
-              Icon(Icons.chevron_right_outlined)
-            ],
-          ),
+        AppTile(
+          titleText: 'Art Market',
+          subtitleText:
+              'Where creativity meets commerce, and art meets opportunity.',
+          tileIcon: Icon(Icons.widgets_rounded),
+          pageName: Page404(),
         ),
-        SizedBox(
-          height: 18,
+        AppTile(
+          titleText: 'Flight & Holidays',
+          subtitleText:
+              'Take off to your dream destination, with flights and holidays tailored to you.',
+          tileIcon: Icon(Icons.widgets_rounded),
+          pageName: Page404(),
         ),
-        Container(
-          padding: EdgeInsets.all(16),
-          color: Colors.white,
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Icon(
-                Icons.widgets_rounded,
-                size: 32,
-                color: Colors.green,
-              ),
-              SizedBox(
-                width: 208,
-                child: Text(
-                  'Community',
-                  style: TextStyle(fontSize: 14),
-                ),
-              ),
-              Icon(Icons.chevron_right_outlined)
-            ],
-          ),
-        ),
-        SizedBox(
-          height: 18,
-        ),
-        Container(
-          padding: EdgeInsets.all(16),
-          color: Colors.white,
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Icon(
-                Icons.widgets_rounded,
-                size: 32,
-                color: Colors.green,
-              ),
-              SizedBox(
-                width: 208,
-                child: Text(
-                  'Art Market',
-                  style: TextStyle(fontSize: 14),
-                ),
-              ),
-              Icon(Icons.chevron_right_outlined)
-            ],
-          ),
-        ),
-        SizedBox(
-          height: 18,
-        ),
-        Container(
-          padding: EdgeInsets.all(16),
-          color: Colors.white,
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Icon(
-                Icons.widgets_rounded,
-                size: 32,
-                color: Colors.green,
-              ),
-              SizedBox(
-                width: 208,
-                child: Text(
-                  'Flights & Holidays',
-                  style: TextStyle(fontSize: 14),
-                ),
-              ),
-              Icon(Icons.chevron_right_outlined)
-            ],
-          ),
-        ),
-        SizedBox(
-          height: 18,
-        ),
-        Container(
-          padding: EdgeInsets.all(16),
-          color: Colors.white,
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Icon(
-                Icons.widgets_rounded,
-                size: 32,
-                color: Colors.green,
-              ),
-              SizedBox(
-                width: 208,
-                child: Text(
-                  'Tickets & Events',
-                  style: TextStyle(fontSize: 14),
-                ),
-              ),
-              Icon(Icons.chevron_right_outlined)
-            ],
-          ),
-        ),
+        AppTile(
+            titleText: 'Tickets & Events',
+            subtitleText:
+                'Experience the thrill of live events, with tickets to the hottest shows and performances.',
+            tileIcon: Icon(Icons.widgets_rounded),
+            pageName: Page404()),
       ],
     );
   }

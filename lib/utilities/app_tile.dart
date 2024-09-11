@@ -20,30 +20,36 @@ class AppTile extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: EdgeInsets.only(bottom: 12),
-      child: ListTile(
-        leading: Container(
-          padding: EdgeInsets.all(8),
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(12),
-            color: Colors.green,
+      child: Container(
+        decoration: BoxDecoration(
+          color: Colors.white,
+          borderRadius:
+              BorderRadius.circular(8), // adjust the radius value as needed
+        ),
+        child: ListTile(
+          leading: Container(
+            padding: EdgeInsets.all(8),
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(12),
+              color: Colors.green,
+            ),
+            child: tileIcon,
           ),
-          child: tileIcon,
+          title: Text(titleText),
+          subtitle: Text(
+            subtitleText,
+            style: TextStyle(fontSize: 10),
+          ),
+          trailing: Icon(
+            Icons.chevron_right,
+            color: Colors.black,
+          ),
+          onTap: () {
+            Navigator.push(
+                context, MaterialPageRoute(builder: (context) => pageName));
+          },
+          iconColor: Colors.white,
         ),
-        title: Text(titleText),
-        subtitle: Text(
-          subtitleText,
-          style: TextStyle(fontSize: 10),
-        ),
-        tileColor: Colors.white,
-        trailing: Icon(
-          Icons.chevron_right,
-          color: Colors.black,
-        ),
-        onTap: () {
-          Navigator.push(
-              context, MaterialPageRoute(builder: (context) => pageName));
-        },
-        iconColor: Colors.white,
       ),
     );
   }

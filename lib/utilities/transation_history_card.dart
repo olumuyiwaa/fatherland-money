@@ -28,44 +28,49 @@ class TransactionHistoryCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.only(bottom: 8),
-      child: ListTile(
-        leading: Image(
-          height: 42,
-          width: 42,
-          image: AssetImage(_getIconData(transactionIcon)),
+      padding: EdgeInsets.only(bottom: 12),
+      child: Container(
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(8),
+          color: Colors.white,
         ),
-        title: Text(
-          transactionName,
-          overflow: TextOverflow.ellipsis,
-          maxLines: 1,
-          style: TextStyle(
-            fontSize: 13,
+        child: ListTile(
+          leading: Image(
+            height: 42,
+            width: 42,
+            image: AssetImage(_getIconData(transactionIcon)),
           ),
-        ),
-        subtitle: Row(
-          children: [
-            Text(
-              'Jun 27th, 2024.',
-              style: TextStyle(fontSize: 10),
+          title: Text(
+            transactionName,
+            overflow: TextOverflow.ellipsis,
+            maxLines: 1,
+            style: TextStyle(
+              fontSize: 13,
             ),
-            SizedBox(
-              width: 12,
-            ),
-            Text(
-              '10:25:45',
-              style: TextStyle(fontSize: 10),
-            ),
-          ],
-        ),
-        tileColor: Colors.white,
-        trailing: Text(
-          "\$$transactionAmount",
-          style: TextStyle(
-            fontSize: 14,
           ),
+          subtitle: Row(
+            children: [
+              Text(
+                'Jun 27th, 2024.',
+                style: TextStyle(fontSize: 10),
+              ),
+              SizedBox(
+                width: 12,
+              ),
+              Text(
+                '10:25:45',
+                style: TextStyle(fontSize: 10),
+              ),
+            ],
+          ),
+          trailing: Text(
+            "\$$transactionAmount",
+            style: TextStyle(
+              fontSize: 14,
+            ),
+          ),
+          onTap: () {},
         ),
-        onTap: () {},
       ),
     );
   }
