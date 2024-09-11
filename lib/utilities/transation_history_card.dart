@@ -32,14 +32,16 @@ class TransactionHistoryCard extends StatelessWidget {
       child: Container(
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(8),
-          color: Colors.white,
         ),
+        clipBehavior: Clip.hardEdge,
+
         child: ListTile(
           leading: Image(
             height: 42,
             width: 42,
             image: AssetImage(_getIconData(transactionIcon)),
           ),
+          tileColor: Colors.white,
           title: Text(
             transactionName,
             overflow: TextOverflow.ellipsis,

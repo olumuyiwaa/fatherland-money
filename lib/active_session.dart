@@ -32,7 +32,7 @@ class _ActiveSessionState extends State<ActiveSession> {
     return Scaffold(
       backgroundColor: Color.fromARGB(255, 243, 243, 243),
       body: Padding(
-        padding: const EdgeInsets.fromLTRB(24, 24, 24, 0),
+        padding: const EdgeInsets.fromLTRB(16, 24, 16, 0),
         child: page[_pageIndex],
       ),
       bottomNavigationBar: BottomNavigationBar(

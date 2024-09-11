@@ -71,6 +71,7 @@ class SettingsPage extends StatelessWidget {
               subtitleText:
                   'Customize your notification preferences for transactions, promotions, and updates.',
               tileIcon: Icon(Icons.notifications),
+              pageName: Page404(),
             ),
             AppTile(
               titleText: 'Currency',
