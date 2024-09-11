@@ -1,6 +1,6 @@
 // ignore_for_file: prefer_const_constructors
 
-//import 'package:fintech/pages/addon_page.dart';
+import 'package:fintech/pages/addon_page.dart';
 import '../pages/home_page.dart';
 import '../pages/settings_page.dart';
 import '../pages/transaction_log.dart';
@@ -24,7 +24,7 @@ class _ActiveSessionState extends State<ActiveSession> {
   final page = [
     HomePage(),
     TransactionLog(),
-    //  AddonPage(),
+    AddonPage(),
     SettingsPage(),
   ];
   @override
@@ -55,10 +55,10 @@ class _ActiveSessionState extends State<ActiveSession> {
             icon: Icon(Icons.list_alt_rounded),
             label: 'History',
           ),
-          //BottomNavigationBarItem(
-          //  icon: Icon(Icons.widgets_rounded),
-          //  label: 'Add Ons',
-          //),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.widgets_rounded),
+            label: 'Add Ons',
+          ),
           BottomNavigationBarItem(
             icon: Icon(Icons.settings),
             label: 'Settings',

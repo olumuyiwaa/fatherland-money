@@ -38,7 +38,7 @@ class _ExpenditureWidgetState extends State<ExpenditureWidget> {
     return Padding(
       padding: const EdgeInsets.fromLTRB(0, 0, 0, 24),
       child: Container(
-        height: 320,
+        height: 300,
         padding: EdgeInsets.all(12),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(8),
@@ -59,7 +59,7 @@ class _ExpenditureWidgetState extends State<ExpenditureWidget> {
                 Container(
                   padding: EdgeInsets.symmetric(horizontal: 12, vertical: 8),
                   decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(8),
+                    borderRadius: BorderRadius.circular(4),
                     color: Color.fromARGB(255, 243, 243, 243),
                   ),
                   child: Text(
@@ -69,25 +69,7 @@ class _ExpenditureWidgetState extends State<ExpenditureWidget> {
                 ),
               ],
             ),
-            // Tab Bar for Categories
-            Container(
-              padding: EdgeInsets.all(4),
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(4),
-                color: Color.fromARGB(255, 243, 243, 243),
-              ),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  // logic to switch between tabs will come in
-                  buildTabItem('All Budgets', isActive: true),
-                  buildTabItem('Gadgets'),
-                  buildTabItem('Utilities'),
-                  buildTabItem('Transport'),
-                ],
-              ),
-            ),
-            // Total Allocated
+            // Total
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -97,7 +79,7 @@ class _ExpenditureWidgetState extends State<ExpenditureWidget> {
                 ),
                 Text(
                   '\$${formatter.format(total)}',
-                  style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                  style: TextStyle(fontSize: 16, fontWeight: FontWeight.w500),
                 ),
               ],
             ),
@@ -133,23 +115,6 @@ class _ExpenditureWidgetState extends State<ExpenditureWidget> {
             buildCategoryBreakdown(
                 'Other Expenses', Colors.grey.shade300, othersPercent, others),
           ],
-        ),
-      ),
-    );
-  }
-
-  Widget buildTabItem(String title, {bool isActive = false}) {
-    return Container(
-      padding: EdgeInsets.all(4),
-      decoration: BoxDecoration(
-        color: isActive ? Colors.white : Colors.transparent,
-        borderRadius: BorderRadius.circular(4),
-      ),
-      child: Text(
-        title,
-        style: TextStyle(
-          fontSize: 10,
-          fontWeight: isActive ? FontWeight.bold : FontWeight.normal,
         ),
       ),
     );

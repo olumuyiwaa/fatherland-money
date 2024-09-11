@@ -1,8 +1,8 @@
-// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, file_names
+// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, file_names, library_private_types_in_public_api, use_super_parameters
 import 'package:flutter/material.dart';
 import 'package:fl_chart/fl_chart.dart';
 
-class AnalyticsWidget extends StatelessWidget {
+class AnalyticsWidget extends StatefulWidget {
   final List<double> incomes = [
     2500,
     3000,
@@ -31,9 +31,16 @@ class AnalyticsWidget extends StatelessWidget {
     1200,
     1800,
   ];
+  AnalyticsWidget({
+    Key? key,
+  }) : super(key: key);
 
-  // Constructor to accept incomes and expenditures
-  AnalyticsWidget({super.key});
+  @override
+  _AnalyticsWidgetState createState() => _AnalyticsWidgetState();
+}
+
+class _AnalyticsWidgetState extends State<AnalyticsWidget> {
+  int selectedYear = DateTime.now().year; // Default selected year
 
   @override
   Widget build(BuildContext context) {
@@ -62,15 +69,36 @@ class AnalyticsWidget extends StatelessWidget {
                           TextStyle(fontSize: 14, fontWeight: FontWeight.w400),
                     ),
                     Container(
-                      padding: EdgeInsets.all(8),
+                      padding: EdgeInsets.only(left: 8),
+                      height: 36,
                       decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(4),
                         color: Color.fromARGB(255, 243, 243, 243),
                       ),
-                      child: Text(
-                        '2023',
-                        style: TextStyle(fontSize: 10),
+                      child: DropdownButton<int>(
+                        value: selectedYear, // Selected year
+                        items: <int>[
+                          DateTime.now().year,
+                          DateTime.now().year - 1
+                        ].map((int value) {
+                          return DropdownMenuItem<int>(
+                            value: value,
+                            child: Text(
+                              value
+                                  .toString(), // Convert int to String for display
+                              style: TextStyle(fontSize: 10),
+                            ),
+                          );
+                        }).toList(),
+                        onChanged: (newValue) {
+                          setState(() {
+                            selectedYear = newValue!;
+                          });
+                        },
+                        underline: SizedBox(), // Hide underline
+                        icon: Icon(Icons.arrow_drop_down),
                       ),
-                    ),
+                    )
                   ],
                 ),
                 Row(
@@ -119,7 +147,8 @@ class AnalyticsWidget extends StatelessWidget {
                   child: BarChart(
                     BarChartData(
                       // Generating the bar groups for the chart
-                      barGroups: _buildBarGroups(incomes, expenditures),
+                      barGroups:
+                          _buildBarGroups(widget.incomes, widget.expenditures),
                       titlesData: FlTitlesData(
                         leftTitles: AxisTitles(
                           sideTitles: SideTitles(
@@ -214,8 +243,8 @@ class AnalyticsWidget extends StatelessWidget {
                       gridData: FlGridData(show: true), // Show grid lines
                       alignment: BarChartAlignment
                           .spaceBetween, // Spacing between bars
-                      maxY: _calculateMaxY(
-                          incomes, expenditures), // Maximum Y value
+                      maxY: _calculateMaxY(widget.incomes,
+                          widget.expenditures), // Maximum Y value
                     ),
                   ),
                 ),
@@ -230,18 +259,18 @@ class AnalyticsWidget extends StatelessWidget {
   // Method to create bar groups
   List<BarChartGroupData> _buildBarGroups(
       List<double> incomes, List<double> expenditures) {
-    return List.generate(incomes.length, (index) {
+    return List.generate(widget.incomes.length, (index) {
       return BarChartGroupData(
         x: index,
         barRods: [
           BarChartRodData(
-            toY: incomes[index], // Income data
+            toY: widget.incomes[index], // Income data
             color: Colors.lightBlueAccent, // Color for income bars
             width: 8,
             borderRadius: BorderRadius.circular(0),
           ),
           BarChartRodData(
-            toY: expenditures[index], // Expenditure data
+            toY: widget.expenditures[index], // Expenditure data
             color: Colors.green, // Color for expenditure bars
             width: 8,
             borderRadius: BorderRadius.circular(0),

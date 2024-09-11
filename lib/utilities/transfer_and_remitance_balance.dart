@@ -39,7 +39,7 @@ class TransferAndRemitanceBalance extends StatelessWidget {
                 ],
               ),
               Text(
-                '#25,000.40',
+                '\$25,000.40',
                 style: TextStyle(color: Colors.white, fontSize: 20),
               ),
             ],
@@ -48,26 +48,39 @@ class TransferAndRemitanceBalance extends StatelessWidget {
             'This Month',
             style: TextStyle(color: Colors.white, fontSize: 14),
           ),
-          Padding(
-            padding: EdgeInsets.fromLTRB(24, 0, 24, 0),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: [
-                Text(
-                  '#20,000',
-                  style: TextStyle(color: Colors.white, fontSize: 18),
-                ),
-                Text(
-                  '|',
-                  style: TextStyle(color: Colors.white, fontSize: 18),
-                ),
-                Text(
-                  '#20,000',
-                  style: TextStyle(color: Colors.white, fontSize: 18),
-                )
-              ],
-            ),
-          )
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: [
+              Row(
+                children: [
+                  Icon(
+                    Icons.upload,
+                    color: Colors.white,
+                  ),
+                  Text(
+                    '\$20,000',
+                    style: TextStyle(color: Colors.white, fontSize: 18),
+                  ),
+                ],
+              ),
+              Text(
+                '|',
+                style: TextStyle(color: Colors.white, fontSize: 18),
+              ),
+              Row(
+                children: [
+                  Icon(
+                    Icons.download,
+                    color: Colors.white,
+                  ),
+                  Text(
+                    '\$20,000',
+                    style: TextStyle(color: Colors.white, fontSize: 18),
+                  ),
+                ],
+              )
+            ],
+          ),
         ],
       ),
     );
