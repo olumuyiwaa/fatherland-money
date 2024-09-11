@@ -38,7 +38,6 @@ class HomePage extends StatelessWidget {
     },
     {'title': 'Bank Statement', 'icon': 'icon-3.png', 'page': BankStatement()},
     {'title': 'Manage Expenses', 'icon': 'icon-4.png', 'page': ManageBudgets()},
-    {'title': 'Manage Expenses', 'icon': 'icon-4.png', 'page': ManageBudgets()},
   ];
 
   @override

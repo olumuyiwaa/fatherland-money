@@ -16,7 +16,7 @@ class Welcome extends StatelessWidget {
         decoration: BoxDecoration(
           image: DecorationImage(
             image: AssetImage('assets/welcome.png'),
-            fit: BoxFit.fitHeight,
+            fit: BoxFit.fill,
           ),
         ),
         child: Padding(

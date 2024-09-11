@@ -54,7 +54,7 @@ class _ExpenditureWidgetState extends State<ExpenditureWidget> {
               children: [
                 Text(
                   'My Expenditures',
-                  style: TextStyle(fontSize: 16, fontWeight: FontWeight.w600),
+                  style: TextStyle(fontSize: 16, fontWeight: FontWeight.w400),
                 ),
                 Container(
                   padding: EdgeInsets.symmetric(horizontal: 12, vertical: 8),
