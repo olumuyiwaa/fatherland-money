@@ -21,10 +21,9 @@ class AppTile extends StatelessWidget {
     return Padding(
       padding: EdgeInsets.only(bottom: 12),
       child: Container(
-        clipBehavior: Clip.hardEdge,
         decoration: BoxDecoration(
-          borderRadius:
-              BorderRadius.circular(8), // adjust the radius value as needed
+          color: Colors.white,
+          borderRadius: BorderRadius.circular(8),
         ),
         child: ListTile(
           leading: Container(
@@ -35,7 +34,6 @@ class AppTile extends StatelessWidget {
             ),
             child: tileIcon,
           ),
-          tileColor: Colors.white,
           title: Text(titleText),
           subtitle: Text(
             subtitleText,

@@ -31,17 +31,13 @@ class TransactionHistoryCard extends StatelessWidget {
       padding: EdgeInsets.only(bottom: 12),
       child: Container(
         decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(8),
-        ),
-        clipBehavior: Clip.hardEdge,
-
+            borderRadius: BorderRadius.circular(8), color: Colors.white),
         child: ListTile(
           leading: Image(
             height: 42,
             width: 42,
             image: AssetImage(_getIconData(transactionIcon)),
           ),
-          tileColor: Colors.white,
           title: Text(
             transactionName,
             overflow: TextOverflow.ellipsis,
