@@ -117,7 +117,7 @@ class SettingsPage extends StatelessWidget {
               titleText: 'Contact Us',
               subtitleText:
                   'Reach out to customer support via chat, email, or phone.',
-              tileIcon: Icon(Icons.contact_support),
+              tileIcon: Icon(Icons.headphones),
               pageName: Page404(),
             )
           ],
@@ -172,13 +172,13 @@ class SettingsPage extends StatelessWidget {
             AppTile(
               titleText: 'App Version: V 1.0.2.3',
               subtitleText: "Click to see if a new update is available",
-              tileIcon: Icon(Icons.update),
+              tileIcon: Icon(Icons.app_shortcut),
               pageName: Page404(),
             ),
             AppTile(
               titleText: 'Developer Info',
               subtitleText: 'Learn more about the team behind the app.',
-              tileIcon: Icon(Icons.developer_board),
+              tileIcon: Icon(Icons.developer_mode),
               pageName: Page404(),
             )
           ],
