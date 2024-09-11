@@ -1,5 +1,7 @@
 // ignore_for_file: prefer_const_constructors
 
+import '../auth/register.dart';
+
 import '../auth/login.dart';
 import '../utilities/button_big.dart';
 import 'package:flutter/material.dart';
@@ -34,30 +36,38 @@ class Welcome extends StatelessWidget {
                 },
                 child: ButtonBig(buttonText: 'Login'),
               ),
-              Padding(
-                padding: const EdgeInsets.only(bottom: 12),
-                child: Container(
-                  height: 64,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(8),
-                    color: Colors.white,
-                    border: Border.all(
-                      color: Color.fromARGB(224, 38, 50, 56),
-                      width: 1,
-                    ),
-                  ),
-                  child: Align(
-                    alignment: Alignment.center,
-                    child: Text(
-                      'Register',
-                      style: TextStyle(
+              GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => Register()),
+                  );
+                },
+                child: Padding(
+                  padding: const EdgeInsets.only(bottom: 12),
+                  child: Container(
+                    height: 64,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(8),
+                      color: Colors.white,
+                      border: Border.all(
                         color: Color.fromARGB(224, 38, 50, 56),
-                        fontSize: 16,
+                        width: 1,
+                      ),
+                    ),
+                    child: Align(
+                      alignment: Alignment.center,
+                      child: Text(
+                        'Register',
+                        style: TextStyle(
+                          color: Color.fromARGB(224, 38, 50, 56),
+                          fontSize: 16,
+                        ),
                       ),
                     ),
                   ),
                 ),
-              ),
+              )
             ],
           ),
         ),
