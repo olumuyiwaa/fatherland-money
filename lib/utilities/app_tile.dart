@@ -19,13 +19,11 @@ class AppTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.only(bottom: 12),
-      child: Container(
-        decoration: BoxDecoration(
-          color: Colors.white,
-          borderRadius: BorderRadius.circular(8),
-        ),
+        padding: EdgeInsets.only(bottom: 12),
         child: ListTile(
+          tileColor: Colors.white,
+          shape:
+              RoundedRectangleBorder(borderRadius: BorderRadius.circular(8.0)),
           leading: Container(
             padding: EdgeInsets.all(8),
             decoration: BoxDecoration(
@@ -48,8 +46,6 @@ class AppTile extends StatelessWidget {
                 context, MaterialPageRoute(builder: (context) => pageName));
           },
           iconColor: Colors.white,
-        ),
-      ),
-    );
+        ));
   }
 }
