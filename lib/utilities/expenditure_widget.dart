@@ -12,28 +12,61 @@ class ExpenditureWidget extends StatefulWidget {
 
 class _ExpenditureWidgetState extends State<ExpenditureWidget> {
   final formatter = NumberFormat('#,##0.00');
-
   final double gadgets = 6800;
-
   final double utilities = 7400;
-
   final double transport = 11750;
-
   final double others = 3800;
 
-  double total = 0;
-  double gadgetsPercent = 0;
-  double utilitiesPercent = 0;
-  double transportPercent = 0;
-  double othersPercent = 0;
+  late String month; // Declare month as a state variable
+
+  @override
+  void initState() {
+    super.initState();
+    int selectedMonth = DateTime.now().month;
+    List<String> monthsnames = [
+      'JAN',
+      'FEB',
+      'MAR',
+      'APR',
+      'MAY',
+      'JUN',
+      'JUL',
+      'AUG',
+      'SEP',
+      'OCT',
+      'NOV',
+      'DEC'
+    ];
+    String thisMonth = monthsnames[selectedMonth - 1];
+    month = thisMonth; // Initialize the month state variable
+  }
 
   @override
   Widget build(BuildContext context) {
-    total = gadgets + utilities + transport + others;
-    gadgetsPercent = ((gadgets / total) * 100);
-    utilitiesPercent = ((utilities / total) * 100);
-    transportPercent = ((transport / total) * 100);
-    othersPercent = ((others / total) * 100);
+    double total = gadgets + utilities + transport + others;
+    double gadgetsPercent = ((gadgets / total) * 100);
+    double utilitiesPercent = ((utilities / total) * 100);
+    double transportPercent = ((transport / total) * 100);
+    double othersPercent = ((others / total) * 100);
+
+    List<String> monthsnames = [
+      'JAN',
+      'FEB',
+      'MAR',
+      'APR',
+      'MAY',
+      'JUN',
+      'JUL',
+      'AUG',
+      'SEP',
+      'OCT',
+      'NOV',
+      'DEC'
+    ];
+    int selectedMonth = DateTime.now().month;
+    String thisMonth = monthsnames[selectedMonth - 1];
+    String lastMonth =
+        selectedMonth == 1 ? monthsnames[11] : monthsnames[selectedMonth - 2];
 
     return Padding(
       padding: const EdgeInsets.fromLTRB(0, 0, 0, 24),
@@ -57,14 +90,30 @@ class _ExpenditureWidgetState extends State<ExpenditureWidget> {
                   style: TextStyle(fontSize: 16, fontWeight: FontWeight.w400),
                 ),
                 Container(
-                  padding: EdgeInsets.symmetric(horizontal: 12, vertical: 8),
+                  padding: EdgeInsets.symmetric(horizontal: 12),
+                  height: 36,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(4),
                     color: Color.fromARGB(255, 243, 243, 243),
                   ),
-                  child: Text(
-                    'This month',
-                    style: TextStyle(fontSize: 12),
+                  child: DropdownButton<String>(
+                    value: month,
+                    items: [thisMonth, lastMonth].map((String value) {
+                      return DropdownMenuItem<String>(
+                        value: value,
+                        child: Text(
+                          value,
+                          style: TextStyle(fontSize: 10),
+                        ),
+                      );
+                    }).toList(),
+                    onChanged: (value) {
+                      setState(() {
+                        month = value!; // Update state variable
+                      });
+                    },
+                    underline: SizedBox(), // Hide underline
+                    icon: Icon(Icons.arrow_drop_down),
                   ),
                 ),
               ],
