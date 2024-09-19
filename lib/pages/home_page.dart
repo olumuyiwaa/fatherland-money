@@ -208,7 +208,7 @@ class HomePage extends StatelessWidget {
           shrinkWrap: true,
           physics: NeverScrollableScrollPhysics(),
           gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-              crossAxisCount: 4,
+              crossAxisCount: MediaQuery.of(context).size.width > 600 ? 6 : 4,
               crossAxisSpacing: 8,
               mainAxisSpacing: 12,
               mainAxisExtent: 100,
