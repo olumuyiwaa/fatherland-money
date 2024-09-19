@@ -55,36 +55,36 @@ class TransactionLog extends StatelessWidget {
         ),
         AnalyticsWidget(),
         Container(
-          padding: EdgeInsets.all(4),
+          padding: EdgeInsets.all(8),
           color: Color.fromARGB(255, 243, 243, 243),
           child: Row(
             children: [
               Container(
                 color: Colors.white,
-                padding: EdgeInsets.all(4),
+                padding: EdgeInsets.symmetric(horizontal: 12, vertical: 6),
                 child: Text(
                   'All',
-                  style: TextStyle(fontSize: 10),
+                  style: TextStyle(fontSize: 12),
                 ),
               ),
               SizedBox(
                 width: 8,
               ),
               Container(
-                padding: EdgeInsets.all(4),
+                padding: EdgeInsets.symmetric(horizontal: 12, vertical: 6),
                 child: Text(
                   'Credit',
-                  style: TextStyle(fontSize: 10),
+                  style: TextStyle(fontSize: 12),
                 ),
               ),
               SizedBox(
                 width: 8,
               ),
               Container(
-                padding: EdgeInsets.all(4),
+                padding: EdgeInsets.symmetric(horizontal: 12, vertical: 6),
                 child: Text(
                   'Debit',
-                  style: TextStyle(fontSize: 10),
+                  style: TextStyle(fontSize: 12),
                 ),
               ),
             ],

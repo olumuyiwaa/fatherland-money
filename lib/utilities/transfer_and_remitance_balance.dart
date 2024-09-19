@@ -54,8 +54,11 @@ class TransferAndRemitanceBalance extends StatelessWidget {
               Row(
                 children: [
                   Icon(
-                    Icons.upload,
+                    Icons.arrow_upward,
                     color: Colors.white,
+                  ),
+                  SizedBox(
+                    width: 5,
                   ),
                   Text(
                     '\$20,000',
@@ -63,15 +66,18 @@ class TransferAndRemitanceBalance extends StatelessWidget {
                   ),
                 ],
               ),
-              Text(
-                '|',
-                style: TextStyle(color: Colors.white, fontSize: 18),
+              Icon(
+                Icons.more_vert,
+                color: Colors.white,
               ),
               Row(
                 children: [
                   Icon(
-                    Icons.download,
+                    Icons.arrow_downward,
                     color: Colors.white,
+                  ),
+                  SizedBox(
+                    width: 5,
                   ),
                   Text(
                     '\$20,000',

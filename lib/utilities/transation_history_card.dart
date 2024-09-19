@@ -1,5 +1,6 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
+import 'package:fintech/pages/transaction_details.dart';
 import 'package:flutter/material.dart';
 
 class TransactionHistoryCard extends StatelessWidget {
@@ -30,6 +31,10 @@ class TransactionHistoryCard extends StatelessWidget {
     return Padding(
       padding: EdgeInsets.only(bottom: 12),
       child: ListTile(
+        onTap: () {
+          Navigator.push(context,
+              MaterialPageRoute(builder: (context) => TransactionDetails()));
+        },
         tileColor: Colors.white,
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8.0)),
         leading: Image(
@@ -66,7 +71,6 @@ class TransactionHistoryCard extends StatelessWidget {
             fontSize: 14,
           ),
         ),
-        onTap: () {},
       ),
     );
   }
