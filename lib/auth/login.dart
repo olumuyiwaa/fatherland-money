@@ -1,8 +1,6 @@
-// ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors
-
+import 'package:flutter/material.dart';
 import '../active_session.dart';
 import '../utilities/input_field.dart';
-import 'package:flutter/material.dart';
 import '../utilities/button_big.dart';
 
 class Login extends StatelessWidget {
@@ -14,11 +12,11 @@ class Login extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(),
       body: Padding(
-        padding: EdgeInsets.fromLTRB(24, 64, 24, 24),
+        padding: const EdgeInsets.fromLTRB(24, 64, 24, 24),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Column(
+            const Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
@@ -39,7 +37,7 @@ class Login extends StatelessWidget {
               ],
             ),
             Padding(
-              padding: EdgeInsets.only(top: 40),
+              padding: const EdgeInsets.only(top: 40),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.end,
                 children: [
@@ -55,26 +53,27 @@ class Login extends StatelessWidget {
                     textObscure: true,
                     textControler: password,
                   ),
-                  Text(
+                  const Text(
                     'Forgot Password?',
                     style: TextStyle(color: Colors.green),
                   )
                 ],
               ),
-            ),
-            GestureDetector(
+            ),            const SizedBox(height: 24,),
+
+            InkWell(
               onTap: () {
                 Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => ActiveSession()));
+                    MaterialPageRoute(builder: (context) => const ActiveSession()));
               },
-              child: ButtonBig(
+              child: const ButtonBig(
                 buttonText: 'Login',
               ),
             ),
-            SizedBox(
-              height: 12,
+            const SizedBox(
+              height: 20,
             ),
-            Column(
+            const Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(

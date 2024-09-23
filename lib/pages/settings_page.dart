@@ -5,6 +5,8 @@ import '../pages/profile.dart';
 import '../utilities/app_tile.dart';
 import 'package:flutter/material.dart';
 
+import '../utilities/mini_profile_pic.dart';
+
 class SettingsPage extends StatelessWidget {
   const SettingsPage({super.key});
 
@@ -19,17 +21,7 @@ class SettingsPage extends StatelessWidget {
               'Settings',
               style: TextStyle(fontSize: 20),
             ),
-            GestureDetector(
-              onTap: () {
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => Profile()));
-              },
-              child: Image(
-                height: 42,
-                width: 42,
-                image: AssetImage('assets/image-1.png'),
-              ),
-            ),
+            MiniProfilePic(),
           ],
         ),
         SizedBox(

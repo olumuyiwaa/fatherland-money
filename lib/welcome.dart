@@ -1,9 +1,7 @@
-// ignore_for_file: prefer_const_constructors
-
+import 'package:flutter/material.dart';
 import '../auth/register.dart';
 import '../auth/login.dart';
 import '../utilities/button_big.dart';
-import 'package:flutter/material.dart';
 
 class Welcome extends StatelessWidget {
   const Welcome({super.key});
@@ -12,29 +10,30 @@ class Welcome extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
           image: DecorationImage(
             image: AssetImage('assets/welcome.png'),
             fit: BoxFit.fill,
           ),
         ),
         child: ListView(
-          padding: EdgeInsets.only(
+          padding: const EdgeInsets.only(
             top: 580,
             left: 16,
             right: 16,
           ),
           children: [
-            GestureDetector(
+            InkWell(
               onTap: () {
                 Navigator.push(
                   context,
                   MaterialPageRoute(builder: (context) => Login()),
                 );
               },
-              child: ButtonBig(buttonText: 'Login'),
+              child: const ButtonBig(buttonText: 'Login'),
             ),
-            GestureDetector(
+            const SizedBox(height: 24,),
+            InkWell(
               onTap: () {
                 Navigator.push(
                   context,
@@ -49,11 +48,11 @@ class Welcome extends StatelessWidget {
                     borderRadius: BorderRadius.circular(8),
                     color: Colors.white,
                     border: Border.all(
-                      color: Color.fromARGB(224, 38, 50, 56),
+                      color: const Color.fromARGB(224, 38, 50, 56),
                       width: 1,
                     ),
                   ),
-                  child: Align(
+                  child: const Align(
                     alignment: Alignment.center,
                     child: Text(
                       'Register',

@@ -1,7 +1,6 @@
-// ignore_for_file: prefer_const_constructors
-
-import 'package:fintech/utilities/button_big.dart';
-import 'package:fintech/utilities/input_field.dart';
+import '../active_session.dart';
+import '../utilities/button_big.dart';
+import '../utilities/input_field.dart';
 import 'package:flutter/material.dart';
 
 class Register extends StatelessWidget {
@@ -16,10 +15,10 @@ class Register extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(),
       body: Padding(
-        padding: EdgeInsets.all(24),
+        padding: const EdgeInsets.only(left: 24, right: 24),
         child: ListView(
           children: [
-            Column(
+            const Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
@@ -39,7 +38,7 @@ class Register extends StatelessWidget {
                 ),
               ],
             ),
-            SizedBox(
+            const SizedBox(
               height: 12,
             ),
             Inputfield(
@@ -67,11 +66,14 @@ class Register extends StatelessWidget {
                 inputTitle: "Confirm Your Password",
                 textObscure: true,
                 textControler: confirmPassword),
-            ButtonBig(buttonText: "Register"),
-            SizedBox(
-              height: 12,
+            const SizedBox(height: 20,),
+            InkWell(onTap: (){
+              Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) => const ActiveSession()));
+            }, child: const ButtonBig(buttonText: "Register")),
+            const SizedBox(
+              height: 20,
             ),
-            Column(
+            const Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(

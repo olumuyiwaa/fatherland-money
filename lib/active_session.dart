@@ -29,7 +29,7 @@ class _ActiveSessionState extends State<ActiveSession> {
   ];
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return  Scaffold(
       backgroundColor: Color.fromARGB(255, 243, 243, 243),
       body: Padding(
         padding: const EdgeInsets.fromLTRB(16, 24, 16, 0),

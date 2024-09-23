@@ -1,5 +1,5 @@
-import '../pages/profile.dart';
 import 'package:flutter/material.dart';
+import '../utilities/mini_profile_pic.dart';
 
 class TransactionDetails extends StatelessWidget {
   const TransactionDetails({super.key});
@@ -10,18 +10,8 @@ class TransactionDetails extends StatelessWidget {
       appBar: AppBar(
         title: const Text('Transaction Details'),
         centerTitle: false,
-        actions: [
-          GestureDetector(
-            onTap: () {
-              Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => const Profile()));
-            },
-            child: const Image(
-              height: 42,
-              width: 42,
-              image: AssetImage('assets/image-1.png'),
-            ),
-          ),
+        actions: [           const MiniProfilePic(),
+
           const SizedBox(
             width: 24,
           )

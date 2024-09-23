@@ -1,13 +1,13 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, must_be_immutable
-import '../pages/profile.dart';
 import '../pages/bank_statement.dart';
 import '../pages/manage_expenditures.dart';
-import '../pages/money_remitance.dart';
+import '../pages/money_remittance.dart';
 import '../pages/money_transfer_page.dart';
 import '../utilities/Analytics_widget.dart';
 import '../utilities/expenditure_widget.dart';
 import '../utilities/category_card.dart';
-import '../utilities/transation_history_card.dart';
+import '../utilities/mini_profile_pic.dart';
+import '../utilities/transaction_history_card.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatelessWidget {
@@ -34,7 +34,7 @@ class HomePage extends StatelessWidget {
     {
       'title': 'Money Remittance',
       'icon': 'icon-2.png',
-      'page': MoneyRemitancePage()
+      'page': MoneyRemittancePage()
     },
     {'title': 'Bank Statement', 'icon': 'icon-3.png', 'page': BankStatement()},
     {'title': 'Manage Expenses', 'icon': 'icon-4.png', 'page': ManageBudgets()},
@@ -58,21 +58,11 @@ class HomePage extends StatelessWidget {
                 ),
                 Icon(
                   Icons.waving_hand_rounded,
-                  color: Colors.amberAccent,
+                  color: Colors.amber,
                 ),
               ],
             ),
-            GestureDetector(
-              onTap: () {
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => Profile()));
-              },
-              child: Image(
-                height: 42,
-                width: 42,
-                image: AssetImage('assets/image-1.png'),
-              ),
-            ),
+            MiniProfilePic(),
           ],
         ),
         SizedBox(
@@ -215,7 +205,8 @@ class HomePage extends StatelessWidget {
               childAspectRatio: 1),
           itemCount: categories.length,
           itemBuilder: (context, index) {
-            return GestureDetector(
+            return             InkWell(borderRadius: BorderRadius.circular(4),
+
               onTap: () {
                 Navigator.push(
                   context,
@@ -240,7 +231,7 @@ class HomePage extends StatelessWidget {
         Padding(
           padding: EdgeInsets.only(top: 12, bottom: 12),
           child: Text(
-            'Last Five (5) Transations',
+            'Last Five (5) Transactions',
             style: TextStyle(fontSize: 16, fontWeight: FontWeight.w400),
           ),
         ),

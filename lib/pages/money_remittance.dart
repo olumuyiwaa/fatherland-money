@@ -1,15 +1,15 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
-import '../pages/profile.dart';
 import '../utilities/button_big.dart';
 import '../utilities/input_drop_down.dart';
 import '../utilities/input_field.dart';
+import '../utilities/mini_profile_pic.dart';
 import '../utilities/transfer_and_remitance_balance.dart';
 import '../utilities/unmutable_input_field.dart';
 import 'package:flutter/material.dart';
 
-class MoneyRemitancePage extends StatelessWidget {
-  MoneyRemitancePage({super.key});
+class MoneyRemittancePage extends StatelessWidget {
+  MoneyRemittancePage({super.key});
   final reference = TextEditingController();
   final amount = TextEditingController();
   final accountNumber = TextEditingController();
@@ -24,17 +24,8 @@ class MoneyRemitancePage extends StatelessWidget {
           title: Text('Money Remittance'),
           centerTitle: false,
           actions: [
-            GestureDetector(
-              onTap: () {
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => Profile()));
-              },
-              child: Image(
-                height: 42,
-                width: 42,
-                image: AssetImage('assets/image-1.png'),
-              ),
-            ),
+            MiniProfilePic(),
+
             SizedBox(
               width: 24,
             )

@@ -3,7 +3,7 @@
 import 'package:flutter/material.dart';
 import '../utilities/Analytics_widget.dart';
 import '../pages/profile.dart';
-import '../utilities/transation_history_card.dart';
+import '../utilities/transaction_history_card.dart';
 
 class TransactionLog extends StatelessWidget {
   TransactionLog({super.key});

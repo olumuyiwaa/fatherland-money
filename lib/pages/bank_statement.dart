@@ -1,8 +1,8 @@
-// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
-import '../pages/profile.dart';
 import '../utilities/button_big.dart';
 import '../utilities/input_field.dart';
 import 'package:flutter/material.dart';
+
+import '../utilities/mini_profile_pic.dart';
 
 class BankStatement extends StatefulWidget {
   const BankStatement({super.key});
@@ -32,10 +32,10 @@ class _BankStatementState extends State<BankStatement> {
             ),
 
             primaryColor: Colors.green, // Green color for the picker header
-            colorScheme: ColorScheme.light(
+            colorScheme: const ColorScheme.light(
               primary: Colors.green, // Green color for the selected date
             ),
-            buttonTheme: ButtonThemeData(
+            buttonTheme: const ButtonThemeData(
               textTheme:
                   ButtonTextTheme.primary, // For buttons like "OK" or "CANCEL"
             ),
@@ -58,35 +58,26 @@ class _BankStatementState extends State<BankStatement> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color.fromARGB(255, 243, 243, 243),
+      backgroundColor: const Color.fromARGB(255, 243, 243, 243),
       appBar: AppBar(
-        backgroundColor: Color.fromARGB(255, 243, 243, 243),
-        title: Text('Bank Statement'),
+        backgroundColor: const Color.fromARGB(255, 243, 243, 243),
+        title: const Text('Bank Statement'),
         centerTitle: false,
         actions: [
-          GestureDetector(
-            onTap: () {
-              Navigator.push(
-                  context, MaterialPageRoute(builder: (context) => Profile()));
-            },
-            child: Image(
-              height: 42,
-              width: 42,
-              image: AssetImage('assets/image-1.png'),
-            ),
-          ),
-          SizedBox(
+          const MiniProfilePic(),
+
+          const SizedBox(
             width: 24,
           )
         ],
       ),
       body: Padding(
-        padding: EdgeInsets.fromLTRB(24, 24, 24, 0),
+        padding: const EdgeInsets.fromLTRB(24, 24, 24, 0),
         child: ListView(
           children: [
-            Text('Time Frame'),
+            const Text('Time Frame'),
             Padding(
-              padding: EdgeInsets.only(top: 12, bottom: 12),
+              padding: const EdgeInsets.only(top: 12, bottom: 12),
               child: Column(
                 children: [
                   Row(
@@ -96,7 +87,7 @@ class _BankStatementState extends State<BankStatement> {
                         child: GestureDetector(
                           onTap: () => _selectDate(context, true),
                           child: InputDecorator(
-                            decoration: InputDecoration(
+                            decoration: const InputDecoration(
                               border: OutlineInputBorder(),
                             ),
                             child: Text(
@@ -107,14 +98,14 @@ class _BankStatementState extends State<BankStatement> {
                           ),
                         ),
                       ),
-                      SizedBox(width: 12),
-                      Text('To'),
-                      SizedBox(width: 12),
+                      const SizedBox(width: 12),
+                      const Text('To'),
+                      const SizedBox(width: 12),
                       Expanded(
                         child: GestureDetector(
                           onTap: () => _selectDate(context, false),
                           child: InputDecorator(
-                            decoration: InputDecoration(
+                            decoration: const InputDecoration(
                               border: OutlineInputBorder(),
                             ),
                             child: Text(
@@ -136,13 +127,13 @@ class _BankStatementState extends State<BankStatement> {
               textObscure: false,
               textControler: email,
             ),
-            SizedBox(height: 12),
-            Text(
+            const SizedBox(height: 12),
+            const Text(
               'Your account statement will be sent to the provided email. Please verify that the email you have provided is correct.',
               style: TextStyle(fontSize: 11, color: Colors.grey),
             ),
-            SizedBox(height: 24),
-            ButtonBig(buttonText: 'Send Statement')
+            const SizedBox(height: 24),
+            const ButtonBig(buttonText: 'Send Statement')
           ],
         ),
       ),
