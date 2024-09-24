@@ -1,4 +1,3 @@
-// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, file_names, library_private_types_in_public_api, use_super_parameters
 import 'package:flutter/material.dart';
 import 'package:fl_chart/fl_chart.dart';
 
@@ -32,8 +31,8 @@ class AnalyticsWidget extends StatefulWidget {
     1800,
   ];
   AnalyticsWidget({
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   @override
   _AnalyticsWidgetState createState() => _AnalyticsWidgetState();
@@ -50,7 +49,7 @@ class _AnalyticsWidgetState extends State<AnalyticsWidget> {
         children: [
           Container(
             height: 248,
-            padding: EdgeInsets.only(top: 12, left: 12, right: 12),
+            padding: const EdgeInsets.only(top: 12, left: 12, right: 12),
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(4),
               color: Colors.white,
@@ -63,17 +62,17 @@ class _AnalyticsWidgetState extends State<AnalyticsWidget> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Text(
+                    const Text(
                       'Transaction Analytics',
                       style:
                           TextStyle(fontSize: 14, fontWeight: FontWeight.w400),
                     ),
                     Container(
-                      padding: EdgeInsets.only(left: 8),
+                      padding: const EdgeInsets.only(left: 8),
                       height: 36,
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(4),
-                        color: Color.fromARGB(255, 243, 243, 243),
+                        color: const Color.fromARGB(255, 243, 243, 243),
                       ),
                       child: DropdownButton<int>(
                         value: selectedYear, // Selected year
@@ -86,7 +85,7 @@ class _AnalyticsWidgetState extends State<AnalyticsWidget> {
                             child: Text(
                               value
                                   .toString(), // Convert int to String for display
-                              style: TextStyle(fontSize: 10),
+                              style: const TextStyle(fontSize: 10),
                             ),
                           );
                         }).toList(),
@@ -95,8 +94,8 @@ class _AnalyticsWidgetState extends State<AnalyticsWidget> {
                             selectedYear = newValue!;
                           });
                         },
-                        underline: SizedBox(), // Hide underline
-                        icon: Icon(Icons.arrow_drop_down),
+                        underline: const SizedBox(), // Hide underline
+                        icon: const Icon(Icons.arrow_drop_down),
                       ),
                     )
                   ],
@@ -105,11 +104,11 @@ class _AnalyticsWidgetState extends State<AnalyticsWidget> {
                   children: [
                     Row(
                       children: [
-                        Text(
+                        const Text(
                           'Income',
                           style: TextStyle(fontSize: 12),
                         ),
-                        SizedBox(width: 8),
+                        const SizedBox(width: 8),
                         Container(
                           width: 8,
                           height: 8,
@@ -119,14 +118,14 @@ class _AnalyticsWidgetState extends State<AnalyticsWidget> {
                         )
                       ],
                     ),
-                    SizedBox(width: 20),
+                    const SizedBox(width: 20),
                     Row(
                       children: [
-                        Text(
+                        const Text(
                           'Expenses',
                           style: TextStyle(fontSize: 12),
                         ),
-                        SizedBox(width: 8),
+                        const SizedBox(width: 8),
                         Container(
                           width: 8,
                           height: 8,
@@ -138,7 +137,7 @@ class _AnalyticsWidgetState extends State<AnalyticsWidget> {
                     ),
                   ],
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 8,
                 ),
                 // Bar chart container
@@ -159,7 +158,7 @@ class _AnalyticsWidgetState extends State<AnalyticsWidget> {
                                   '${(value / 1000).toStringAsFixed(0)}k';
                               return Text(
                                 formattedValue,
-                                style: TextStyle(
+                                style: const TextStyle(
                                     color: Colors.black, fontSize: 10),
                               );
                             },
@@ -167,12 +166,12 @@ class _AnalyticsWidgetState extends State<AnalyticsWidget> {
                             reservedSize: 32, // Space for the titles
                           ),
                         ),
-                        rightTitles: AxisTitles(
+                        rightTitles: const AxisTitles(
                           sideTitles: SideTitles(
                             showTitles: false, // Hide right side titles
                           ),
                         ),
-                        topTitles: AxisTitles(
+                        topTitles: const AxisTitles(
                           sideTitles: SideTitles(
                             showTitles: false, // Hide top side titles
                           ),
@@ -184,55 +183,55 @@ class _AnalyticsWidgetState extends State<AnalyticsWidget> {
                               // Mapping the x-axis values to month names
                               switch (value.toInt()) {
                                 case 0:
-                                  return Text('Jan',
+                                  return const Text('Jan',
                                       style: TextStyle(
                                           color: Colors.black, fontSize: 10));
                                 case 1:
-                                  return Text('Feb',
+                                  return const Text('Feb',
                                       style: TextStyle(
                                           color: Colors.black, fontSize: 10));
                                 case 2:
-                                  return Text('Mar',
+                                  return const Text('Mar',
                                       style: TextStyle(
                                           color: Colors.black, fontSize: 10));
                                 case 3:
-                                  return Text('Apr',
+                                  return const Text('Apr',
                                       style: TextStyle(
                                           color: Colors.black, fontSize: 10));
                                 case 4:
-                                  return Text('May',
+                                  return const Text('May',
                                       style: TextStyle(
                                           color: Colors.black, fontSize: 10));
                                 case 5:
-                                  return Text('Jun',
+                                  return const Text('Jun',
                                       style: TextStyle(
                                           color: Colors.black, fontSize: 10));
                                 case 6:
-                                  return Text('Jul',
+                                  return const Text('Jul',
                                       style: TextStyle(
                                           color: Colors.black, fontSize: 10));
                                 case 7:
-                                  return Text('Aug',
+                                  return const Text('Aug',
                                       style: TextStyle(
                                           color: Colors.black, fontSize: 10));
                                 case 8:
-                                  return Text('Sep',
+                                  return const Text('Sep',
                                       style: TextStyle(
                                           color: Colors.black, fontSize: 10));
                                 case 9:
-                                  return Text('Oct',
+                                  return const Text('Oct',
                                       style: TextStyle(
                                           color: Colors.black, fontSize: 10));
                                 case 10:
-                                  return Text('Nov',
+                                  return const Text('Nov',
                                       style: TextStyle(
                                           color: Colors.black, fontSize: 10));
                                 case 11:
-                                  return Text('Dec',
+                                  return const Text('Dec',
                                       style: TextStyle(
                                           color: Colors.black, fontSize: 10));
                                 default:
-                                  return Text('');
+                                  return const Text('');
                               }
                             },
                             reservedSize: 32, // Space for the titles
@@ -240,7 +239,7 @@ class _AnalyticsWidgetState extends State<AnalyticsWidget> {
                         ),
                       ),
                       borderData: FlBorderData(show: false), // Hide the borders
-                      gridData: FlGridData(show: true), // Show grid lines
+                      gridData: const FlGridData(show: true), // Show grid lines
                       alignment: BarChartAlignment
                           .spaceBetween, // Spacing between bars
                       maxY: _calculateMaxY(widget.incomes,

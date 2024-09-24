@@ -1,6 +1,4 @@
-// ignore_for_file: prefer_const_constructors
-
-import 'package:fintech/pages/addon_page.dart';
+import '../pages/addon_page.dart';
 import '../pages/home_page.dart';
 import '../pages/settings_page.dart';
 import '../pages/transaction_log.dart';
@@ -30,7 +28,7 @@ class _ActiveSessionState extends State<ActiveSession> {
   @override
   Widget build(BuildContext context) {
     return  Scaffold(
-      backgroundColor: Color.fromARGB(255, 243, 243, 243),
+      backgroundColor: const Color.fromARGB(255, 243, 243, 243),
       body: Padding(
         padding: const EdgeInsets.fromLTRB(16, 24, 16, 0),
         child: page[_pageIndex],

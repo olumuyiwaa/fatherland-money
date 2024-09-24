@@ -3,7 +3,7 @@ import '../pages/bank_statement.dart';
 import '../pages/manage_expenditures.dart';
 import '../pages/money_remittance.dart';
 import '../pages/money_transfer_page.dart';
-import '../utilities/Analytics_widget.dart';
+import '../utilities/analytics_widget.dart';
 import '../utilities/expenditure_widget.dart';
 import '../utilities/category_card.dart';
 import '../utilities/mini_profile_pic.dart';
